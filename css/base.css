@@ -1,0 +1,60 @@
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Trykker);
+* {
+  font-family: 'Trykker', serif;
+}
+h1,h2,h3,h4,h5 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+}
+h1.main {
+  margin-bottom: 3rem;
+  font-size: 4rem;
+}
+.centered {
+  text-align: center;
+}
+.tooltip-inner {
+  font-size: 1.3rem;
+  opacity: 1;
+}
+footer {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+hr {
+  border-top: 1px solid #ccc;
+}
+.nav-row {
+  z-index: 4;
+  position: relative;
+}
+.nav-body {
+  padding: 2rem 0;
+  text-align: center;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-width: 1px 0px;
+}
+.nav-body a {
+  display: inline-block;
+  min-width: 8em;
+}
+.sidebar h2 {
+  margin-top: 2.8rem;
+  margin-bottom: 1rem;
+}
+.sidebar .about-me {
+  color: #999;
+}
+.side-nav {
+  border: 1px solid #ccc;
+  border-width: 1px 0px;
+  margin-top: 2rem;
+  padding: 2rem 0;
+}
+.side-nav a {
+  display: block;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
