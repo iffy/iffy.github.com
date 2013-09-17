@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
 <head>
-  <title>IffyCan - Matt Haggard's Personal Website</title>
-  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Cinzel|Trykker' rel='stylesheet' type='text/css'>
+  <title>Iffy Can - Matt Haggard's Personal Website</title>
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Trykker' rel='stylesheet' type='text/css'>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"> -->
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <style>
   * {
     font-family: 'Trykker', serif;
@@ -15,88 +15,111 @@
     font-family: 'Josefin Sans', sans-serif;
     font-weight: bold;
   }
-  .blurb p {
+  h1.main {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+  }
+  .tooltip-inner {
+    font-size: 1.3rem;
+    opacity: 1;
+  }
+  .about-me {
+    z-index: 3;
+    position: relative;
+    padding-top: 0em;
+    padding-bottom: 1em;
+    margin-top: -4rem;
+    text-align: center;
+  }
+  .about-me img {
+    max-width: 267px;
+    max-height: 267px;
+  }
+  .blurb {
     text-align: center;
   }
   .blurb .name {
-    font-family: 'Cinzel', serif;
-    font-size: 170%;
+    font-size: 200%;
   }
-  .blurb .contact {
+  footer {
     text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
   }
-  .social-icon {
-    border-radius: 50%;
-    background: #000;
-    color: #fff;
+  hr {
+    border-top: 1px solid #ccc;
+  }
+  .nav-row {
+    z-index: 4;
+    position: relative;
+  }
+  .nav-body {
+    padding: 2rem 0;
+    text-align: center;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-width: 1px 0px;
+  }
+  .nav-body a {
     display: inline-block;
-    width: 30px;
-    height: 30px;
-    font-size: 16px;
-    line-height: 30px;
-    text-align: center;
-  }
-  .social-icons {
-    text-align: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
-  .social-icon.google-plus {
-    background: #dd4b39;
-  }
-  .social-icon.github {
-    background: #333;
-  }
-  .social-icon.email {
-    background: #08c;
+    min-width: 8em;
   }
   </style>
 </head>
 <body>
   <div class="container">
+    
     <div class="row">
-      <div class="col-sm-3 blurb">
-        <img src="family.jpg" width="100%" style="border-radius: 50%;">
+      <div class="col-sm-offset-4 col-sm-4">
+        <h1 class="main">Iffy Can</h1>
+      </div>
+    </div>
+
+    <div class="row nav-row">
+      <div class="col-sm-offset-2 col-sm-8 nav-body">
+        <a href>Blog</a>
+        <a href>Projects</a>
+        <a href>About me</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-offset-4 col-sm-4 about-me">    
+        <img src="img/family.jpg" width="100%" style="border-radius: 50%;">
 
         <hr/>
-        <p>
+        
+        <div class="blurb col-xs-12">
           Hi, I'm
           <br/>
           <span class="name">Matt Haggard</span>
           <br/>(the one on the left).
           <br/>I'm a dad,
-          <br/>that programs for a living,
-          <br/>and did electrical engineering in
-          a former life.
-        </p>
+          <br/>who studied Electrical Engineering,
+          <br/>and <span data-toggle="tooltip" title="Python, AngularJS, PostgreSQL...">programs</span> for a living.
+          <br/>
+          <br/>Some people call me Iffy.
+        </div>
+
         <hr/>
-        <p class="contact">
-          Look me up online:
 
-          <div class="row">
-            <div class="col-xs-3">
-              <a class="social-icon google-plus" href="https://plus.google.com/103200131889809194331" target="_blank"><i class="icon-google-plus"></i></a>
-            </div>
-            <div class="col-xs-9">
-              Google+
-            </div>
-          </div>
-          <div class="social-icons">
-            
-            <a class="social-icon github" href="https://github.com/iffy" target="_blank"><i class="icon-github-alt"></i></a>
-            <a class="social-icon email"><i class="icon-envelope"></i></a>
-          </div>
-          <p>
-            Or email me at my last name ii @ gmail.com
-          </p>
-        </p>
       </div>
-
-      <div class="col-sm-offset-1 col-sm-8">
-        <h1>Iffy Can</h1>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <footer>
+          <a href data-toggle="tooltip" title="is my Gmail address">haggardii</a>
+          &bull; <a href="https://github.com/iffy" target="_blank">github.com/iffy</a>
+          &bull; <a href="https://plus.google.com/103200131889809194331" target="_blank">Google+</a>
+        </footer>
       </div>
-
     </div>
   </div>
+  <script>
+  $(function() {
+    $('[data-toggle=tooltip]').tooltip();
+  })
+  </script>
 </body>
 </html>
