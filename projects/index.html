@@ -7,10 +7,11 @@
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
   <link href='../css/base.css' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
   <style>
   </style>
 </head>
-<body>
+<body ng-app="iffycan.projects">
   <div class="container">
     
     <div class="row">
@@ -29,41 +30,221 @@
       </div>
 
 
-      <div class="col-sm-offset-1 col-sm-9">
+      <div class="col-sm-offset-1 col-sm-9" ng-controller="ProjectListCtrl">
         <h1 class="main">Projects</h1>
+        
+        <div class="col-sm-6">
+          <project tags="JSON,REST,AngularJS">
+            <div class="name"><div class="logo"><img src="http://simplefin.org/img/logo.svg"></div>SimpleFIN</div>
+            <a class="link" href="http://simplefin.org" target="_blank">simplefin.org</a>
+            <div class="blurb">
+              SimpleFIN (SFIN) is a protocol definition that let's you give third party tools read-only access to bank transaction data.
+            </div>
+          </project>
 
-        <div class="project">
-          <div class="name"><div class="logo"><img src="http://simplefin.org/img/logo.svg"></div>SimpleFIN</div>
-          <a class="link" href="http://simplefin.org" target="_blank">simplefin.org</a>
-          <div class="blurb">
-            SimpleFIN (SFIN) is a protocol definition that let's you give third party tools read-only access to bank transaction data.
-          </div>
-          <div class="tags">
-            <div>AngularJS</div>
-            <div>JSON</div>
-            <div>HTTP</div>
-          </div>
+          <project tags="Twisted,Networking,AngularJS,D3.js,Server-Sent Events,Web">
+            <div class="name">xatrobots</div>
+            <a class="link" href="http://github.com/iffy/xatrobots" target="_blank">github.com/iffy/xatrobots</a>
+            <div class="blurb">
+              Xatrobots (XAT-Robots) is a tool for learning Twisted.  Unlike the classic <a href="http://necrobones.com/atrobots/" target="_blank">AT-Robots</a>, players must program entire teams of cooperating robots to win.
+            </div>
+          </project>
+
+          <project tags="AngularJS,Chrome,Web">
+            <div class="name">ht</div>
+            <a class="link" href="https://github.com/iffy/ht/tree/chrome-ext" target="_blank">github.com/iffy/ht</a>
+            <div class="blurb">
+              ht is Chrome extension that makes it easy to visualize and change Home Teaching assignments (an activity we do in <a href="http://www.lds.org/?lang=eng" target="_blank">my church</a>).
+            </div>
+          </project>
+
+          <project tags="Twisted,PostgreSQL,SQLite,Server-Sent Events,Web">
+            <div class="name">chalkboard</div>
+            <a class="link" href="https://github.com/iffy/chalkboard" target="_blank">github.com/iffy/chalkboard</a>
+            <div class="blurb">
+              At my wife's request, here is a collaborative chalkboard with sticky notes.
+            </div>
+          </project>
         </div>
 
-        <div class="project">
-          <div class="name">Twisted For the Win!</div>
+        <div class="col-sm-6">
+
+          <project tags="Twisted,AngularJS,Web">
+            <div class="name">Twisted FTW!</div>
+            <a class="link" href="http://iffycan.com/twistedftw" target="_blank">iffycan.com/twistedftw</a>
+            <div class="blurb">
+              Twisted FTW! (For the Win) is a growing documentation project meant to make Twisted more approachable and to showcase some of Twisted's great features.
+            </div>
+          </project>
+
+          <project tags="Twisted">
+            <div class="name">grace</div>
+            <a class="link" href="https://github.com/iffy/grace" target="_blank">github.com/iffy/grace</a>
+            <div class="blurb">
+              Grace is a hot-swappable port forwarder built on top of Twisted.  It allows you to move live traffic from one port to another with no downtime and wait for existing connections to finish.
+            </div>
+          </project>
+
+          <project tags="Twisted,PostgreSQL,SQLite">
+            <div class="name">norm</div>
+            <a class="link" href="https://github.com/iffy/norm" target="_blank">github.com/iffy/norm</a>
+            <div class="blurb">
+              Norm is a no-frills, asynchronous, cross-database adapter.  It also includes a no-frills ORM and simple method for managing database patches.
+            </div>
+          </project>
+
+          <project tags="Twisted,Networking,Web">
+            <div class="name">garden</div>
+            <a class="link" href="https://github.com/iffy/garden" target="_blank">github.com/iffy/garden</a>
+            <div class="blurb">
+              Garden is a job server that allows you to retain all versions of output.  It's particularly useful when you want to update a computation and see how the update will affect existing data.
+            </div>
+          </project>
         </div>
 
-        <div class="project">
-          <div class="name">xatrobots</div>
-        </div>
-
-        <div class="project">
-          <div class="name">grace</div>
-        </div>
-
-        <div class="project">
-          <div class="name">norm</div>
-        </div>
       </div>
     </div>
 
 
   </div>
+  <script>
+var app = angular.module('iffycan.projects', []);
+
+app.factory('Tags', function() {
+  this.data = {
+    tags: {},
+    selected_count: 0
+  };
+
+  // Get a tag, creating it if necessary.
+  this._getTag = function(name) {
+    if (this.data.tags[name] === undefined) {
+      this.data.tags[name] = {name: name, selected: false};
+    }
+    return this.data.tags[name];
+  }
+
+  // Toggle the selection of a tag.
+  this.toggle = function(name) {
+    var tag = this._getTag(name);
+    tag.selected = !tag.selected;
+    if (tag.selected) {
+      this.data.selected_count += 1;
+    } else {
+      this.data.selected_count -= 1;
+    }
+  }
+
+  // Return a list of all selected tags
+  this.selectedTags = function() {
+    var selected = [];
+    angular.forEach(this.data.tags, function(tag) {
+      if (tag.selected) {
+        selected.push(tag.name);
+      }
+    });
+    return selected;
+  }
+
+  // Return the tags which are selected from the given list
+  this.selectedFrom = function(names) {
+    return names.filter(function(name) {
+      var tag = this._getTag(name);
+      return tag.selected;
+    }.bind(this));
+  }
+
+  // Return whether all the selected tags are in the names list
+  this.isSuperSet = function(names) {
+    return this.selectedFrom(names).length == this.data.selected_count;
+  }
+
+  // Return True if any tags are selected.
+  this.anySelected = function() {
+    return this.data.selected_count != 0;
+  }
+
+  this.isSelected = function(name) {
+    return this._getTag(name).selected;
+  }
+  return this;
+});
+
+app.directive('tag', function(Tags) {
+  return {
+    restrict: 'E',
+    replace: true,
+    transclude: true,
+    template: '<div class="tag" ng-transclude></div>',
+    scope: {},
+    link: function(scope, element, attrs) {
+      var tagName = function() {
+        return element[0].children[0].innerHTML;
+      }
+      element.bind('click', function(e) {
+        var tag_name = tagName();
+        scope.$apply(function() {
+          Tags.toggle(tag_name);
+        })
+      })
+      scope.$watch(function() {
+        return Tags.isSelected(tagName());
+      }, function(selected) {
+        if (selected) {
+          element.addClass('selected');
+        } else {
+          element.removeClass('selected');
+        }
+      })
+    }
+  }
+});
+
+app.directive('project', function(Tags) {
+  return {
+    restrict: 'E',
+    replace: true,
+    transclude: true,
+    template: '<div class="project" ng-class="{faded:!should_show}">' + 
+        '<div ng-transclude></div>' +
+        '<div class="taglist"><tag ng-repeat="tag in tags">{{ tag }}</tag></div>' +
+      '</div>',
+    scope: {
+
+    },
+    link: function(scope, element, attrs) {
+      var tags = (attrs.tags || '').split(',');
+      scope.tags = tags;
+    },
+    controller: function($scope, $element, $attrs) {
+      $scope.should_show = false;
+      $scope.$watch(function() {
+        if (!Tags.anySelected()) {
+          // no tags are selected, display everything
+          return true;
+        }
+        return Tags.isSuperSet($scope.tags);
+      }, function(newval) {
+        $scope.should_show = newval;
+      })
+    }
+  }
+})
+
+app.controller('ProjectListCtrl', function($scope, Tags) {
+  $scope.selected_tags = [];
+
+  $scope.$watch(function() {
+    return Tags.selectedTags();
+  }, function(newval) {
+    $scope.selected_tags.length = 0;
+    angular.extend($scope.selected_tags, newval);
+  }, true);
+
+  $scope.shouldShow = function(names) {
+    return Tags.selectedFrom(names).length;
+  }
+});
+  </script>
 </body>
 </html>
