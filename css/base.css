@@ -58,3 +58,49 @@ hr {
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
 }
+
+/* projects */
+.project {
+  display: inline-block;
+  float: left;
+  width: 30rem;
+  margin-right: 4rem;
+}
+
+.project .name {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.project .logo {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin-right: 1rem;
+}
+.project .logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.project a.link {
+  margin-top: 1rem;
+  display: block;
+}
+
+.project .blurb {
+  color: #999;
+}
+
+.project .tags {
+
+}
+.project .tags div {
+  display: inline-block;
+  background: #ddd;
+  color: #666;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.9rem;
+  margin-right: 0.3rem;
+  border-radius: 2px;
+}
