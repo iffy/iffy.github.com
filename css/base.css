@@ -117,3 +117,16 @@ hr {
 .tag.selected {
   background: #fe9;
 }
+
+.attribution {
+  color: #dcc49a;
+  font-size: 0.9rem;
+  text-align: right;
+  margin-top: 0.1rem;
+  margin-bottom: -0.9rem;
+  padding-right: 0.5rem;
+}
+.attribution a {
+  color: #dcc49a;
+  text-decoration: underline;
+}
