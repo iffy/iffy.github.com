@@ -40,6 +40,10 @@ hr {
   display: inline-block;
   min-width: 8em;
 }
+.nav-body.overlay {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(200, 200, 200, 0.8);
+}
 .sidebar h2 {
   margin-top: 2.8rem;
   margin-bottom: 1rem;
