@@ -1,0 +1,56 @@
+{% extends "base.fullnav.html" %}
+{% block head %}
+  {{ super() }}
+  {% for keyword in article.keywords %}
+    <meta name="keywords" contents="{{keyword}}" />
+  {% endfor %}
+
+  {% for description in article.description %}
+    <meta name="description" contents="{{description}}" />
+  {% endfor %}
+
+  {% for tag in article.tags %}
+    <meta name="tags" contents="{{tag}}" />
+  {% endfor %}
+
+{% endblock %}
+
+{% block content %}
+<section class="longform-article">
+  <header>
+    <div class="article-title">
+      <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+         title="Permalink to {{ article.title|striptags }}">{{ article.title }}
+      </a>
+    </div>
+
+    {% import 'translations.html' as translations with context %}
+    {{ translations.translations_for(article) }}
+  </header>
+
+  <div class="article-info">
+    <abbr class="published" title="{{ article.date.isoformat() }}">
+      {{ article.locale_date }}
+    </abbr>
+    {% if article.modified %}
+      <abbr class="modified" title="{{ article.modified.isoformat() }}">
+        {{ article.locale_modified }}
+      </abbr>
+    {% endif %}
+    
+    {% if article.authors %}
+      <div class="authors">
+        By
+        {% for author in article.authors %}
+          <div class="author"><a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a></div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+  
+  <div class="article-content">
+    {{ article.content }}
+  </div>
+
+</section>
+{% endblock %}

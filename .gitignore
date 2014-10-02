@@ -1,3 +1,6 @@
 _site/
 *.pid
 twistd.log
+cache/
+output/
+*.pyc

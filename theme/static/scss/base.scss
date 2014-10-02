@@ -1,0 +1,168 @@
+@import 'reset';
+
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Trykker);
+
+$content-width: 900px;
+
+$text-font-size: 1rem;
+$text-line-height: 1.8rem;
+
+$aside-width: 180px;
+$aside-margin: 20px;
+$article-width: $content-width - 2 * ($aside-width + $aside-margin);
+
+$grey: #666;
+$light-grey: #ccc;
+
+body {
+  font-family: 'Trykker', serif;
+}
+
+%title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+}
+
+%text {
+  font-size: $text-font-size;
+  line-height: $text-line-height;
+}
+
+a {
+  color: #428bca;
+  text-decoration: none;
+}
+
+header.main {
+  @extend %title;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding: 0.5rem;
+  a {
+    text-decoration: none;
+    color: $grey;
+  }
+}
+
+nav.main {
+  max-width: $content-width;
+  margin: 0 auto;
+  border: 1px solid $light-grey;
+  border-width: 1px 0px;
+  padding: 1.5rem 0 1.8rem;
+  text-align: center;
+  ul {
+    li {
+      display: inline-block;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+footer.main {
+  max-width: $content-width;
+  margin: 6rem auto 0;
+  border: 1px solid $light-grey;
+  border-width: 1px 0 0;
+  padding: 1.5rem 0 1.8rem;
+  text-align: center;
+}
+
+section.longform-article {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 1rem 0.5rem;
+  header {
+    .article-title {
+      margin: 1rem;
+      @extend %title;
+      font-size: 5rem;
+      text-align: center;
+      a {
+        color: $grey;  
+      }
+    }
+  }
+  .article-info {
+    opacity: 0.8;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    .published,
+    .modified,
+    .authors {
+      display: block;
+    }
+    .authors {
+      .author {
+        display: inline-block;
+      }
+    }
+  }
+  .article-content {
+    @extend %text;
+    padding: 0.5rem 0rem 0.5rem $aside-margin;
+    max-width: $article-width;
+    position: relative;
+    margin: 0 auto;
+    span.aside {
+      text-indent: 0;
+      display: inline-block;
+      position: absolute;
+      width: $aside-width;
+      right: -$aside-width - $aside-margin;
+      font-style: italic;
+      line-height: 1.3rem;
+      font-size: 0.8rem;
+      color: $grey;
+      border: 1px solid #3498db;
+      border-width: 0px 0px 0px 1px;
+      padding: 0.5rem 0.5rem 0.5rem;
+      background: #eee;
+      &.red {
+        border-color: #e74c3c;
+      }
+      @media (max-width: $content-width) {
+        display: inline-block;
+        float: right;
+        position: static;
+      }
+    }
+    p {
+      text-indent: 3rem;
+      margin-bottom: 1rem;
+      img {
+        max-width: 100%;
+        margin-left: -3rem;
+      }
+    }
+    hr {
+      height: 1px;
+      border: 1px solid $light-grey;
+      border-width: 1px 0px 0px 0px;
+      margin: 2rem;
+    }
+    blockquote {
+      background: #eee;
+      padding: 1rem 3rem;
+      text-indent: 0;
+      margin-bottom: 1rem;
+      p {
+        text-indent: 0;
+        padding: 0;
+        margin: 0;
+      }
+    }
+    .simple-footnotes {
+      margin-top: 1rem;
+      border-top: 1px solid $light-grey;
+      padding: 1rem 0rem;
+      li {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
