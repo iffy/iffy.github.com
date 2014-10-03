@@ -37,6 +37,12 @@ a {
   color: #428bca;
   text-decoration: none;
 }
+h2 {
+  @extend %title;
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
 
 header.floater {
   .header-guts {
@@ -104,6 +110,26 @@ footer.main {
   text-align: center;
 }
 
+img.spread {
+  width: 100%;
+}
+img.spread.top {
+  position: relative;
+  margin-top: -7rem;
+  z-index: 1;
+  @media (max-width: $content-width) {
+    margin-top: 0;
+  }
+}
+.attribution {
+  color: $light-grey;
+  font-size: 0.8rem;
+  text-align: right;
+  margin-top: 0.1rem;
+  margin-bottom: -0.9rem;
+  margin-right: 0.5rem;
+}
+
 section.frontpage {
   max-width: $content-width;
   margin: 0 auto;
@@ -133,6 +159,16 @@ section.frontpage {
     }
   }
   
+}
+
+section.page {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  p {
+    @extend %text;
+    margin-bottom: 1rem;
+  }
 }
 
 section.longform-article {
