@@ -3,6 +3,7 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Trykker);
 
 $content-width: 900px;
+$header-shrink-threshold: 500px;
 
 $text-font-size: 1.1rem;
 $text-line-height: 2rem;
@@ -37,41 +38,101 @@ a {
   text-decoration: none;
 }
 
-header.main {
-  @extend %title;
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-  padding: 0.5rem;
-  a {
-    text-decoration: none;
-    color: $grey;
-  }
-}
-
-nav.main {
-  max-width: $content-width;
-  margin: 0 auto;
-  border: 1px solid $light-grey;
-  border-width: 1px 0px;
-  padding: 1.5rem 0 1.8rem;
-  text-align: center;
-  ul {
-    li {
-      display: inline-block;
-      font-size: 1.1rem;
+header.floater {
+  .header-guts {
+    z-index: 2;
+    position: relative;
+    max-width: $content-width;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 0.5rem;
+    //border-radius: 0 0px 6px 6px;
+    border: 1px solid $light-grey;
+    border-width: 0px 0px 1px;
+    @media (max-width: $header-shrink-threshold) {
+      flex-basis: 100%;
+      flex-flow: row wrap;
+      padding-top: 2rem;
+    }
+    .title {
+      @extend %title;
+      font-size: 3rem;
+      padding: 0 2rem;
+      white-space: nowrap;
+      a {
+        white-space: nowrap;
+        text-decoration: none;
+        color: $grey;
+      }
+      @media (max-width: $header-shrink-threshold) {
+        flex-basis: 100%;
+        font-size: 2rem;
+      }
+    }
+    nav {
+      flex-grow: 1;
+      padding: 1.5rem 0 1.8rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      a {
+        font-size: 1.1rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        @media (max-width: $header-shrink-threshold) {
+          display: inline-block;
+          margin-right: 0;
+        }
+      }
+      @media (max-width: $header-shrink-threshold) {
+        display: block;
+      }
     }
   }
 }
 
 footer.main {
   max-width: $content-width;
-  margin: 6rem auto 0;
+  margin: 0 auto;
   border: 1px solid $light-grey;
   border-width: 1px 0 0;
   padding: 1.5rem 0 1.8rem;
   text-align: center;
+}
+
+section.frontpage {
+  max-width: $content-width;
+  margin: 0 auto;
+  .hero {
+    position: relative;
+    img {
+      width: 100%;
+    }
+    .blurb {
+      color: $grey;
+      position: absolute;
+      top: 0;
+      left: 1rem;
+      background: rgba(255, 255, 255, 0.8);
+      //height: 100%;
+      padding: 3rem 1rem;
+      text-align: center;
+      .name {
+        font-size: 2rem;
+      }
+      @media (max-width: $content-width) {
+        position: relative;
+        top: 0;
+        left: 0;
+
+      }
+    }
+  }
+  
 }
 
 section.longform-article {

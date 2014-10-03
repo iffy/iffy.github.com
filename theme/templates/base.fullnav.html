@@ -1,29 +1,25 @@
 {% extends 'base.html' %}
 
 {% block body %}
-  <header class="main">
-    <a href="/">
-      <div class="name">{{ SITENAME }}</div>
-      <div class="subtitle">{{ SITESUBTITLE }}</div>
-    </a>
-  </header>
-  
-  <nav class="main">
-    <ul>      
-      {% if DISPLAY_PAGES_ON_MENU %}
-        {% for p in PAGES %}
-          <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-        {% endfor %}
-      {% else %}
-        {% if DISPLAY_CATEGORIES_ON_MENU %}
-          {% for cat, null in categories %}
-            <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+  <header class="floater">
+    <div class="header-guts">
+      <div class="title">
+        <a href="/">
+          <div class="name">{{ SITENAME }}</div>
+          <div class="subtitle">{{ SITESUBTITLE }}</div>
+        </a>
+      </div>
+
+      <nav>
+        {% if DISPLAY_PAGES_ON_MENU %}
+          {% for p in PAGES %}
+            <a{% if p == page %} class="active"{% endif %} href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
           {% endfor %}
         {% endif %}
-      {% endif %}
-    </ul>
-  </nav>
-  
+      </nav>
+    </div>
+  </header>
+
   {% block content %}
   {% endblock %}
   
