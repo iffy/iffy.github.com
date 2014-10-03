@@ -4,3 +4,4 @@ twistd.log
 cache/
 output/
 *.pyc
+*.sublime-*

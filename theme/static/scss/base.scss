@@ -4,8 +4,8 @@
 
 $content-width: 900px;
 
-$text-font-size: 1rem;
-$text-line-height: 1.8rem;
+$text-font-size: 1.1rem;
+$text-line-height: 2rem;
 
 $aside-width: 180px;
 $aside-margin: 20px;
@@ -13,6 +13,10 @@ $article-width: $content-width - 2 * ($aside-width + $aside-margin);
 
 $grey: #666;
 $light-grey: #ccc;
+
+html {
+  font-size: 14px;
+}
 
 body {
   font-family: 'Trykker', serif;
@@ -107,6 +111,10 @@ section.longform-article {
     max-width: $article-width;
     position: relative;
     margin: 0 auto;
+    @media (max-width: $content-width) {
+      max-width: $content-width;
+      padding: 0.5rem;
+    }
     span.aside {
       text-indent: 0;
       display: inline-block;
@@ -128,6 +136,8 @@ section.longform-article {
         display: inline-block;
         float: right;
         position: static;
+        margin: 0.5rem;
+        border-width: 0px;
       }
     }
     p {
