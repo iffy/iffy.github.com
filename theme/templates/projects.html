@@ -1,4 +1,45 @@
-<!doctype html>
+{% extends 'base.fullnav.html' %}
+
+{% block content %}
+<div ng-app="projects" ng-controller="MainCtrl as ctrl">
+  {{ ctrl }}
+  {{ ctrl.projects }}
+  <div ng-repeat="project in ctrl.projects">
+    {{ project }}
+  </div>
+</div>
+
+<script>
+var app = angular.module('projects', []);
+
+app.value('ProjectData', [
+  {
+    name: 'Buckets',
+    url: 'https://www.bucketsisbetter.com',
+    image: '/img/buckets.png',
+    tags: ['Python', 'Twisted', 'AngularJS', 'JSON', 'RPC'],
+    blurb: 'Buckets is a personal/family finance web app with an emphasis on being more secure than other popular apps.',
+  },
+  {
+    name: 'SimpleFIN',
+    url: 'http://simplefin.org',
+    tags: ['AngularJS', 'JSON'],
+    blurb: "SimpleFIN (SFIN) is a protocol definition that let's you give third party tools read-only access to bank transaction data.",
+  }
+]);
+
+app.controller('MainCtrl', function(ProjectData) {
+  var ctrl = this;
+  ctrl.projects = ProjectData;
+  console.log('projects', ctrl.projects);
+  return ctrl;
+});
+</script>
+
+
+{% endblock %}
+
+<!-- 
 <html>
 <head>
   <title>Projects</title>
@@ -12,7 +53,6 @@
   </style>
 </head>
 <body ng-app="iffycan.projects">
-  <!-- preload the easy way, cause it's 11pm and I don't want to find the proper way -->
   <img src="/img/beach.jpg" style="width:0px; height:0px;">
   
   <div class="container">
@@ -260,3 +300,4 @@ app.controller('ProjectListCtrl', function($scope, Tags) {
   </script>
 </body>
 </html>
+ -->

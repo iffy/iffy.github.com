@@ -31,8 +31,11 @@
   {% endif %}
 
   {% assets filters="scss,cssmin", output="css/base.min.css", "scss/base.scss" %}
-  <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}"
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}" />
   {% endassets %}
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
 
   {% endblock head %}
 </head>
