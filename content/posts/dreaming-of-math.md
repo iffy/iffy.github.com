@@ -1,7 +1,6 @@
 Title: Dreaming of Math
 Date: 2014-10-02
 Tags: personal, math, musings
-Category: Personal
 Template: article.longform
 
 I love math.  I miss using math and can easily find myself engrossed in the solving of fun math problems.  Recently, I've been trying to sort out how to cut a flat sheet of paper such that you can bend it into a cone&mdash;specifically, given the radii of the top and bottom openings and the height, how do I draw that on a flat sheet.  I love that math is discoverable.[ref]Unlike some subjects, (English, for instance<span class="aside">I'm not disparaging English.  I love the subject and the language.</span>) it's entirely possible to be given a math problem and figure it out without first being taught it.  There's nothing naturally discoverable about *and* being a conjuction&mdash;we've decided it should be thus and you must learn it.  Of course, in Mathematics there is a standard, agreed-upon *representation* which ought to be learned (and which is probably a big stumbling block for many people) but it's merely our representation for the already-existing thing.[/ref]
@@ -38,7 +37,7 @@ and
 
 I might ask them to write down this assignment... or find some other means of distraction so that I could quickly dress up in this costume<span class="aside">I think my classroom might have a phone booth in it just for things like this.</span>:
 
-![Roman centurion](images/centurion.jpg)
+![Roman centurion](../images/centurion.jpg)
 
 "Ahoy!" I'd yell.  (Or perhaps I'd research the Romans and how they greet and say that instead).  Anyway, I'd make a noise and draw a sword.  "What mean ye to be doin'?" my Roman pirate self would say.  <span class="aside">Roman pirates typically refer to chalkboards and whiteboards as "de plank."</span>"What manner of scurvy be writin' this dross on de plank?"  I might peek out from under my helmet and loudly whisper, "IT'S OKAY.  I'M PRETENDING TO BE A ROMAN CENTURION."
 
@@ -54,7 +53,7 @@ I might ask them to write down this assignment... or find some other means of di
 
 I'd need another distraction at this point.  Perhaps I could get the principal to come in so that I could stab him with my sword.  He would die a great, dramatic death over the course of a few minutes&mdash;the kids would love it.  In the meantime, I'd get dressed up as this:
 
-![Robot costume](images/robotcostume.jpg)
+![Robot costume](../images/robotcostume.jpg)
 
 "Beep, beeoop!" I'd say in a robot voice.  "I only know ones and zeroes.  Beeowwoop!  Ones and zeroes are all I know."  I'd maneuver to the board and say, "These are all wrong.  This is the correct way to write the numbers 0 through 10."  It would end up looking like this:
 

@@ -38,3 +38,6 @@ THEME = 'theme'
 
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['assets', 'simple_footnotes']
+
+ARTICLE_URL = 'posts/{slug}.html'
+ARTICLE_SAVE_AS = 'posts/{slug}.html'

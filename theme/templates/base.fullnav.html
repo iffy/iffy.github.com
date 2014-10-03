@@ -2,18 +2,14 @@
 
 {% block body %}
   <header class="main">
-    <a href="http://www.iffycan.com">
+    <a href="/">
       <div class="name">{{ SITENAME }}</div>
       <div class="subtitle">{{ SITESUBTITLE }}</div>
     </a>
   </header>
   
   <nav class="main">
-    <ul>
-      {% for title, link in MENUITEMS %}
-        <li><a href="{{ link }}">{{ title }}</a></li>
-      {% endfor %}
-      
+    <ul>      
       {% if DISPLAY_PAGES_ON_MENU %}
         {% for p in PAGES %}
           <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
@@ -33,13 +29,8 @@
   
   
   <footer class="main">
-    <a href data-toggle="tooltip" title="is my Gmail address">haggardii</a>
+    <a href title="is my Gmail address">haggardii</a>
     &bull; <a href="https://github.com/iffy" target="_blank">github.com/iffy</a>
   </footer>
-  <script>
-  $(function() {
-    $('[data-toggle=tooltip]').tooltip();
-  })
-  </script>
   
 {% endblock %}

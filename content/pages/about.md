@@ -1,7 +1,71 @@
 Title: About me
 
-This is about me
+<img src="../images/beach.jpg" style="width:100%;">
+  <div class="attribution">
+    Photo by Alicia at <a href="http://thatsaprettypicture.com/" target="_blank">That's a Pretty Picture</a>
+  </div>
 
-    :::python
-    def foo(x):
-        print x
+<div style="position: absolute; top: 0; left: 0; width: 100%;">
+<div class="container">
+  
+  <div class="row">
+    <div class="col-sm-offset-4 col-sm-4">
+      <h1 class="main centered">iffy can</h1>
+    </div>
+  </div>
+
+  <div class="row nav-row">
+    <div class="col-sm-offset-2 col-sm-8 nav-body overlay">
+      <a href="/">Home</a>
+      <a href="http://blog.iffycan.com/" target="_blank">Blog</a>
+      <a href="/projects">Projects</a>
+      <a href="/aboutme.html">About me</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="container">
+
+<div class="row" style="margin-top: 3rem; margin-bottom: 6rem;">
+  <div class="col-sm-offset-2 col-sm-8 about-me">    
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Professionally,</h2>
+        <p>
+          I have a B.S. in Electrical Engineering from Brigham Young University.  Currently I work as a front-end/back-end web developer at SecurityMetrics, Inc. in Orem, Utah.  I do everything from making externally facing web applications to in-house build/deploy/development tools. 
+        </p>
+        <p>
+          We work mostly with Python and PostgreSQL.  We also use <a href="http://twistedmatrix.com" target="_blank">Twisted</a>, TCL, jQuery, JSON, AngularJS, Git, Linux, OS X, Buildbot and more.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Personally,</h2>
+        <p>
+          I love to walk.  My ideal life includes perhaps a bike, but no car.  I enjoy hiking and biking and visiting fun people.  And cooking.  Let's not forget the food.  Also, the first ripe peach of the season is my favorite food.
+        </p>
+        <p>
+          Linguistics is a secret hobby of mine.  I speak Spanish, a tiny bit of French, and a bit more Shona and Ndebele.  If I could get paid to learn and speak different languages, I would sign up in a heartbeat.
+        </p>
+        <p>
+          I enjoy good music&mdash;playing the piano and singing.  One of my favorite feelings is the tiredness earned from working outside: digging, mowing, planting, weeding, gardening or building.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Iffy?</h2>
+        <p>
+          A high school nickname.  Works well as a username, too.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
