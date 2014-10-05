@@ -130,6 +130,55 @@ img.spread.top {
   margin-right: 0.5rem;
 }
 
+.project-page {
+  max-width: $content-width;
+  margin: 0 auto;
+  .project-list {
+    display: flex;
+    flex-flow: row wrap;
+    .project {
+      flex-basis: 50%;
+      padding: 3rem;
+      .logo {
+        float: right;
+        margin-right: 2rem;
+        img {
+          width: $content-width/12;
+        }
+      }
+      .name {
+        @extend %title;
+        font-size: 2rem;
+        display: block;
+        color: $grey;
+      }
+      .url {
+        display: block;
+      }
+      .blurb {
+        @extend %text;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+      .tags {
+        .tag {
+          display: inline-block;
+          padding: 0.2rem 0.5rem;
+          margin: 0.2rem;
+          font-size: 0.8rem;
+          background: rgba(241, 196, 15, 0.3);
+          &.selected {
+            background: rgba(241, 196, 15, 1.0);
+          }
+          &.unselected {
+            opacity: 0.5;
+          } 
+        }
+      }
+    }
+  }
+}
+
 section.frontpage {
   max-width: $content-width;
   margin: 0 auto;

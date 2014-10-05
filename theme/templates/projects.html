@@ -1,37 +1,96 @@
 {% extends 'base.fullnav.html' %}
 
 {% block content %}
-<div ng-app="projects" ng-controller="MainCtrl as ctrl">
-  {{ ctrl }}
-  {{ ctrl.projects }}
-  <div ng-repeat="project in ctrl.projects">
-    {{ project }}
+<div ng-app="projects" ng-controller="MainCtrl as ctrl" class="project-page">
+  <div class="project-list">
+    <div class="project" ng-repeat="project in ctrl.projects">
+      <a href="[[ project.url ]]" class="logo" target="_blank" ng-if="project.image"><img src="[[ project.image ]]"></a>
+      <a href="[[ project.url ]]" class="name" target="_blank">[[ project.name ]]</a>
+      <a href="[[ project.url ]]" class="url" target="_blank">[[ project.url|trimscheme ]]</a>
+      <div class="blurb">[[ project.blurb ]]</div>
+      <div class="tags">
+        <div class="tag" ng-repeat="tag in project.tags">[[ tag ]]</div>
+      </div>
+    </div>
   </div>
 </div>
 
 <script>
 var app = angular.module('projects', []);
 
+app.config(function($interpolateProvider) {
+    $interpolateProvider.startSymbol('[[');
+    $interpolateProvider.endSymbol(']]');
+});
+
+app.filter('trimscheme', function() {
+  return function(x) {
+    return x.split('//')[1];
+  }
+})
+
 app.value('ProjectData', [
   {
     name: 'Buckets',
     url: 'https://www.bucketsisbetter.com',
-    image: '/img/buckets.png',
-    tags: ['Python', 'Twisted', 'AngularJS', 'JSON', 'RPC'],
+    image: '../images/buckets.png',
+    tags: ['Website', 'Python', 'Twisted', 'AngularJS', 'RPC', 'SQLAlchemy', 'ElasticSearch', 'PostgreSQL'],
     blurb: 'Buckets is a personal/family finance web app with an emphasis on being more secure than other popular apps.',
   },
   {
     name: 'SimpleFIN',
     url: 'http://simplefin.org',
-    tags: ['AngularJS', 'JSON'],
+    image: 'http://simplefin.org/img/logo.svg',
+    tags: ['Website', 'AngularJS'],
     blurb: "SimpleFIN (SFIN) is a protocol definition that let's you give third party tools read-only access to bank transaction data.",
+  },
+  {
+    name: 'grace',
+    url: 'https://github.com/iffy/grace',
+    tags: ['Library', 'Python', 'Twisted'],
+    blurb: "Grace is a hot-swappable port forwarder built on top of Twisted.  It allows you to move live traffic from one port to another with no downtime and wait for existing connections to finish."
+  },
+  {
+    name: 'crapc',
+    url: 'https://github.com/iffy/crapc',
+    tags: ['Library', 'Python', 'Twisted', 'RPC'],
+    blurb: "Crapc is yet another RPC-making library.  It supports making JSON-RPC 2.0 compatible RPC systems.",
+  },
+  {
+    name: 'crudset',
+    url: 'https://github.com/iffy/crudset',
+    tags: ['Library', 'Python', 'Twisted', 'SQLAlchemy'],
+    blurb: 'Crudset makes it easy to make CRUD functionality that returns a consistent set of fields and even nested objects.'
+  },
+  {
+    name: 'parsefin',
+    url: 'https://github.com/iffy/parsefin',
+    tags: ['Library', 'Python', 'OFX', 'OFC'],
+    blurb: 'Parsefin lets you easily parse OFX/OFC files into Python dicts.'
+  },
+  {
+    name: 'Twisted FTW!',
+    url: 'http://twistedftw.org',
+    tags: ['Website', 'Python', 'Twisted', 'AngularJS'],
+    blurb: "Twisted FTW! (For the Win) is a growing documentation project meant to make Twisted more approachable and to showcase some of Twisted's great features.",
+  },
+  {
+    name: 'ht',
+    url: 'https://github.com/iffy/ht/tree/chrome-ext',
+    tags: ['Chrome extension', 'AngularJS'],
+    blurb: "ht is Chrome extension that makes it easy to visualize and change Home Teaching assignments (an activity we do in my church)."
+  },
+  {
+    name: 'chalkboard',
+    url: 'https://github.com/iffy/chalkboard',
+    tags: ['AngularJS', 'Python', 'Twisted', 'PostgreSQL', 'SQLite', 'Server-Sent Events'],
+    blurb: "At my wife's request, here is a collaborative chalkboard with sticky notes.",
   }
 ]);
 
 app.controller('MainCtrl', function(ProjectData) {
   var ctrl = this;
   ctrl.projects = ProjectData;
-  console.log('projects', ctrl.projects);
   return ctrl;
 });
 </script>
@@ -40,75 +99,6 @@ app.controller('MainCtrl', function(ProjectData) {
 {% endblock %}
 
 <!-- 
-<html>
-<head>
-  <title>Projects</title>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-
-  <link href='../css/base.css' rel='stylesheet' type='text/css'>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-  <style>
-  </style>
-</head>
-<body ng-app="iffycan.projects">
-  <img src="/img/beach.jpg" style="width:0px; height:0px;">
-  
-  <div class="container">
-    
-    <div class="row">
-      <div class="col-sm-2 sidebar">
-        <h2>iffy can</h2>
-        <div class="about-me">
-          by Matt Haggard
-        </div>
-        <div class="side-nav">
-          <a href="/">Home</a>
-          <a href="http://blog.iffycan.com/" target="_blank">Blog</a>
-          <a href="/projects">Projects</a>
-          <a href="/aboutme.html">About me</a>
-        </div>
-
-      </div>
-
-
-      <div class="col-sm-offset-1 col-sm-9" ng-controller="ProjectListCtrl">
-        <h1 class="main">Projects</h1>
-        
-        <div class="col-sm-6">
-
-          <project tags="Python,Web,AngularJS,Twisted,rpc">
-            <div class="name"><div class="logo"><img src="/img/buckets.png"></div>Buckets</div>
-            <a class="link" href="http://bucketsisbetter.com" target="_blank">bucketsisbetter.com</a>
-            <div class="blurb">
-              Buckets is a personal/family finance web app with an emphasis on being more secure than other popular apps.
-            </div>
-          </project>
-
-          <project tags="JSON,REST,AngularJS">
-            <div class="name"><div class="logo"><img src="http://simplefin.org/img/logo.svg"></div>SimpleFIN</div>
-            <a class="link" href="http://simplefin.org" target="_blank">simplefin.org</a>
-            <div class="blurb">
-              SimpleFIN (SFIN) is a protocol definition that let's you give third party tools read-only access to bank transaction data.
-            </div>
-          </project>
-
-          <project tags="Python,Twisted,Networking,AngularJS,D3.js,Server-Sent Events,Web">
-            <div class="name">xatrobots</div>
-            <a class="link" href="http://github.com/iffy/xatrobots" target="_blank">github.com/iffy/xatrobots</a>
-            <div class="blurb">
-              Xatrobots (XAT-Robots) is a tool for learning Twisted.  Unlike the classic <a href="http://necrobones.com/atrobots/" target="_blank">AT-Robots</a>, players must program entire teams of cooperating robots to win.
-            </div>
-          </project>
-
-          <project tags="AngularJS,Chrome,Web">
-            <div class="name">ht</div>
-            <a class="link" href="https://github.com/iffy/ht/tree/chrome-ext" target="_blank">github.com/iffy/ht</a>
-            <div class="blurb">
-              ht is Chrome extension that makes it easy to visualize and change Home Teaching assignments (an activity we do in <a href="http://www.lds.org/?lang=eng" target="_blank">my church</a>).
-            </div>
-          </project>
 
           <project tags="Python,Twisted,PostgreSQL,SQLite,Server-Sent Events,Web">
             <div class="name">chalkboard</div>
@@ -121,12 +111,6 @@ app.controller('MainCtrl', function(ProjectData) {
 
         <div class="col-sm-6">
 
-          <project tags="Python,Twisted,AngularJS,Web">
-            <div class="name">Twisted FTW!</div>
-            <a class="link" href="http://twistedftw.org" target="_blank">twistedftw.org</a>
-            <div class="blurb">
-              Twisted FTW! (For the Win) is a growing documentation project meant to make Twisted more approachable and to showcase some of Twisted's great features.
-            </div>
           </project>
 
           <project tags="Python,Twisted">
