@@ -14,6 +14,7 @@ $article-width: $content-width - 2 * ($aside-width + $aside-margin);
 
 $grey: #666;
 $light-grey: #ccc;
+$link-color: #428bca;
 
 html {
   font-size: 14px;
@@ -34,7 +35,7 @@ body {
 }
 
 a {
-  color: #428bca;
+  color: $link-color;
   text-decoration: none;
 }
 h2 {
@@ -42,6 +43,10 @@ h2 {
   font-size: 2rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  color: $grey;
+}
+.center {
+  text-align: center;
 }
 
 header.floater {
@@ -208,6 +213,40 @@ section.frontpage {
     }
   }
   
+}
+
+.post-list {
+  padding: 2rem;
+  max-width: $article-width;
+  margin: 0 auto;
+  a.article-listing {
+    color: inherit;
+    display: block;
+    margin-bottom: 2rem;
+    .title {
+      @extend %title;
+      color: $grey;
+      font-size: 2rem;
+      text-align: center;
+    }
+    .published {
+      color: $grey;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .summary {
+      @extend %text;
+    }
+    &:hover {
+      color: $link-color;
+      .title,
+      .published,
+      .summary {
+        color: $link-color;
+
+      }
+    }
+  }
 }
 
 section.page {
