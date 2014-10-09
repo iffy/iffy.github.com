@@ -2,14 +2,17 @@
 
 {% block content %}
 <div ng-app="projects" ng-controller="MainCtrl as ctrl" class="project-page">
+  <div class="tags tag-list">
+    <div class="tag" ng-repeat="tag in ctrl.all_tags|orderBy:'toString()'" ng-click="ctrl.toggleTag(tag)" ng-class="{selected: ctrl.isTagSelected(tag)}">[[ tag ]]</div>
+  </div>
   <div class="project-list">
-    <div class="project" ng-repeat="project in ctrl.projects">
+    <div class="project" ng-repeat="project in ctrl.projects|orderBy:ctrl.orderProjects" ng-class="{unselected: !ctrl.isProjectSelected(project)}">
       <a href="[[ project.url ]]" class="logo" target="_blank" ng-if="project.image"><img src="[[ project.image ]]"></a>
       <a href="[[ project.url ]]" class="name" target="_blank">[[ project.name ]]</a>
       <a href="[[ project.url ]]" class="url" target="_blank">[[ project.url|trimscheme ]]</a>
       <div class="blurb">[[ project.blurb ]]</div>
       <div class="tags">
-        <div class="tag" ng-repeat="tag in project.tags">[[ tag ]]</div>
+        <div class="tag" ng-repeat="tag in project.tags" ng-click="ctrl.toggleTag(tag)"  ng-class="{selected: ctrl.isTagSelected(tag), unselected: ctrl.anyTagsSelected()}">[[ tag ]]</div>
       </div>
     </div>
   </div>
@@ -27,21 +30,23 @@ app.filter('trimscheme', function() {
   return function(x) {
     return x.split('//')[1];
   }
-})
+});
 
 app.value('ProjectData', [
   {
     name: 'Buckets',
     url: 'https://www.bucketsisbetter.com',
+    category: 'website',
     image: '../images/buckets.png',
-    tags: ['Website', 'Python', 'Twisted', 'AngularJS', 'RPC', 'SQLAlchemy', 'ElasticSearch', 'PostgreSQL'],
+    tags: ['Web app', 'Website', 'Python', 'Twisted', 'AngularJS', 'RPC', 'SQLAlchemy', 'ElasticSearch', 'PostgreSQL', 'OFX'],
     blurb: 'Buckets is a personal/family finance web app with an emphasis on being more secure than other popular apps.',
   },
   {
     name: 'SimpleFIN',
     url: 'http://simplefin.org',
+    category: 'website',
     image: 'http://simplefin.org/img/logo.svg',
-    tags: ['Website', 'AngularJS'],
+    tags: ['Website', 'Web app', 'AngularJS'],
     blurb: "SimpleFIN (SFIN) is a protocol definition that let's you give third party tools read-only access to bank transaction data.",
   },
   {
@@ -65,7 +70,7 @@ app.value('ProjectData', [
   {
     name: 'parsefin',
     url: 'https://github.com/iffy/parsefin',
-    tags: ['Library', 'Python', 'OFX', 'OFC'],
+    tags: ['Library', 'Python', 'OFX'],
     blurb: 'Parsefin lets you easily parse OFX/OFC files into Python dicts.'
   },
   {
@@ -83,205 +88,68 @@ app.value('ProjectData', [
   {
     name: 'chalkboard',
     url: 'https://github.com/iffy/chalkboard',
-    tags: ['AngularJS', 'Python', 'Twisted', 'PostgreSQL', 'SQLite', 'Server-Sent Events'],
+    tags: ['Web app', 'AngularJS', 'Python', 'Twisted', 'PostgreSQL', 'SQLite', 'Server-Sent Events'],
     blurb: "At my wife's request, here is a collaborative chalkboard with sticky notes.",
   }
 ]);
 
-app.controller('MainCtrl', function(ProjectData) {
+app.factory('AllTags', function(ProjectData) {
+  var tags = [];
+  angular.forEach(ProjectData, function(item) {
+    angular.forEach(item.tags, function(tag) {
+      if (tags.indexOf(tag) === -1) {
+        tags.push(tag);
+      }
+    });
+  });
+  return tags;
+});
+
+app.controller('MainCtrl', function(ProjectData, AllTags) {
   var ctrl = this;
   ctrl.projects = ProjectData;
+  ctrl.all_tags = AllTags;
+  ctrl.selected_tags = [];
+
+  ctrl.toggleTag = function(tag) {
+    if (!ctrl.isTagSelected(tag)) {
+      ctrl.selected_tags.push(tag);
+    } else {
+      ctrl.selected_tags.splice(ctrl.selected_tags.indexOf(tag), 1);
+    }
+  }
+  ctrl.isTagSelected = function(tag) {
+    return ctrl.selected_tags.indexOf(tag) !== -1;
+  }
+  ctrl.anyTagsSelected = function() {
+    return ctrl.selected_tags.length !== 0;
+  }
+  ctrl.isProjectSelected = function(project) {
+    if (!ctrl.anyTagsSelected()) {
+      return true;
+    }
+    for (var i = 0; i < project.tags.length; i++) {
+      if (ctrl.isTagSelected(project.tags[i])) {
+        return true;
+      }
+    }
+    return false;
+  }
+  ctrl.orderProjects = function(project) {
+    var idx = ProjectData.indexOf(project);
+    if (ctrl.anyTagsSelected()) {
+      if (ctrl.isProjectSelected(project)) {
+        return [0, idx];
+      } else {
+        return [1, idx];
+      }
+    } else {
+      return [idx];  
+    }
+  }
   return ctrl;
 });
 </script>
 
 
 {% endblock %}
-
-<!-- 
-
-          <project tags="Python,Twisted,PostgreSQL,SQLite,Server-Sent Events,Web">
-            <div class="name">chalkboard</div>
-            <a class="link" href="https://github.com/iffy/chalkboard" target="_blank">github.com/iffy/chalkboard</a>
-            <div class="blurb">
-              At my wife's request, here is a collaborative chalkboard with sticky notes.
-            </div>
-          </project>
-        </div>
-
-        <div class="col-sm-6">
-
-          </project>
-
-          <project tags="Python,Twisted">
-            <div class="name">grace</div>
-            <a class="link" href="https://github.com/iffy/grace" target="_blank">github.com/iffy/grace</a>
-            <div class="blurb">
-              Grace is a hot-swappable port forwarder built on top of Twisted.  It allows you to move live traffic from one port to another with no downtime and wait for existing connections to finish.
-            </div>
-          </project>
-
-          <project tags="Python,Twisted,PostgreSQL,SQLite">
-            <div class="name">norm</div>
-            <a class="link" href="https://github.com/iffy/norm" target="_blank">github.com/iffy/norm</a>
-            <div class="blurb">
-              Norm is a no-frills, asynchronous, cross-database adapter.  It also includes a no-frills ORM and simple method for managing database patches.
-            </div>
-          </project>
-
-          <project tags="Python,Twisted,Networking,Web">
-            <div class="name">garden</div>
-            <a class="link" href="https://github.com/iffy/garden" target="_blank">github.com/iffy/garden</a>
-            <div class="blurb">
-              Garden is a job server that allows you to retain all versions of output.  It's particularly useful when you want to update a computation and see how the update will affect existing data.
-            </div>
-          </project>
-        </div>
-
-      </div>
-    </div>
-
-
-  </div>
-  <script>
-var app = angular.module('iffycan.projects', []);
-
-app.factory('Tags', function() {
-  this.data = {
-    tags: {},
-    selected_count: 0
-  };
-
-  // Get a tag, creating it if necessary.
-  this._getTag = function(name) {
-    if (this.data.tags[name] === undefined) {
-      this.data.tags[name] = {name: name, selected: false};
-    }
-    return this.data.tags[name];
-  }
-
-  // Toggle the selection of a tag.
-  this.toggle = function(name) {
-    var tag = this._getTag(name);
-    tag.selected = !tag.selected;
-    if (tag.selected) {
-      this.data.selected_count += 1;
-    } else {
-      this.data.selected_count -= 1;
-    }
-  }
-
-  // Return a list of all selected tags
-  this.selectedTags = function() {
-    var selected = [];
-    angular.forEach(this.data.tags, function(tag) {
-      if (tag.selected) {
-        selected.push(tag.name);
-      }
-    });
-    return selected;
-  }
-
-  // Return the tags which are selected from the given list
-  this.selectedFrom = function(names) {
-    return names.filter(function(name) {
-      var tag = this._getTag(name);
-      return tag.selected;
-    }.bind(this));
-  }
-
-  // Return whether all the selected tags are in the names list
-  this.isSuperSet = function(names) {
-    return this.selectedFrom(names).length == this.data.selected_count;
-  }
-
-  // Return True if any tags are selected.
-  this.anySelected = function() {
-    return this.data.selected_count != 0;
-  }
-
-  this.isSelected = function(name) {
-    return this._getTag(name).selected;
-  }
-  return this;
-});
-
-app.directive('tag', function(Tags) {
-  return {
-    restrict: 'E',
-    replace: true,
-    transclude: true,
-    template: '<div class="tag" ng-transclude></div>',
-    scope: {},
-    link: function(scope, element, attrs) {
-      var tagName = function() {
-        return element[0].children[0].innerHTML;
-      }
-      element.bind('click', function(e) {
-        var tag_name = tagName();
-        scope.$apply(function() {
-          Tags.toggle(tag_name);
-        })
-      })
-      scope.$watch(function() {
-        return Tags.isSelected(tagName());
-      }, function(selected) {
-        if (selected) {
-          element.addClass('selected');
-        } else {
-          element.removeClass('selected');
-        }
-      })
-    }
-  }
-});
-
-app.directive('project', function(Tags) {
-  return {
-    restrict: 'E',
-    replace: true,
-    transclude: true,
-    template: '<div class="project" ng-class="{faded:!should_show}">' + 
-        '<div ng-transclude></div>' +
-        '<div class="taglist"><tag ng-repeat="tag in tags">{{ tag }}</tag></div>' +
-      '</div>',
-    scope: {
-
-    },
-    link: function(scope, element, attrs) {
-      var tags = (attrs.tags || '').split(',');
-      scope.tags = tags;
-    },
-    controller: function($scope, $element, $attrs) {
-      $scope.should_show = false;
-      $scope.$watch(function() {
-        if (!Tags.anySelected()) {
-          // no tags are selected, display everything
-          return true;
-        }
-        return Tags.isSuperSet($scope.tags);
-      }, function(newval) {
-        $scope.should_show = newval;
-      })
-    }
-  }
-})
-
-app.controller('ProjectListCtrl', function($scope, Tags) {
-  $scope.selected_tags = [];
-
-  $scope.$watch(function() {
-    return Tags.selectedTags();
-  }, function(newval) {
-    $scope.selected_tags.length = 0;
-    angular.extend($scope.selected_tags, newval);
-  }, true);
-
-  $scope.shouldShow = function(names) {
-    return Tags.selectedFrom(names).length;
-  }
-});
-  </script>
-</body>
-</html>
- -->

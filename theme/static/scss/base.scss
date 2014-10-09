@@ -4,6 +4,7 @@
 
 $content-width: 900px;
 $header-shrink-threshold: 500px;
+$two-column-threshold: 750px;
 
 $text-font-size: 1.1rem;
 $text-line-height: 2rem;
@@ -138,12 +139,48 @@ img.spread.top {
 .project-page {
   max-width: $content-width;
   margin: 0 auto;
+  .tags {
+    .tag {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      margin: 0.2rem;
+      font-size: 0.8rem;
+      background: rgba(241, 196, 15, 0.3);
+      transition: background 0.2s, opacity 0.2s;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      &.unselected {
+        opacity: 0.5;
+      }
+      &.selected {
+        background: rgba(241, 196, 15, 1.0);
+        opacity: 1.0;
+      }
+    }
+  }
+  .tag-list {
+    padding: 3rem;
+    text-align: center;
+  }
   .project-list {
     display: flex;
     flex-flow: row wrap;
+    @media (max-width: $two-column-threshold) {
+      display: block;
+    }
     .project {
       flex-basis: 50%;
       padding: 3rem;
+      transition: background 0s, opacity 0s, transform 0s;
+      @media (max-width: $two-column-threshold) {
+        margin: 0 auto;
+        max-width: $two-column-threshold/2;
+      }
+      &.unselected {
+        opacity: 0.2;
+      }
       .logo {
         float: right;
         margin-right: 2rem;
@@ -164,21 +201,6 @@ img.spread.top {
         @extend %text;
         margin-top: 1rem;
         margin-bottom: 1rem;
-      }
-      .tags {
-        .tag {
-          display: inline-block;
-          padding: 0.2rem 0.5rem;
-          margin: 0.2rem;
-          font-size: 0.8rem;
-          background: rgba(241, 196, 15, 0.3);
-          &.selected {
-            background: rgba(241, 196, 15, 1.0);
-          }
-          &.unselected {
-            opacity: 0.5;
-          } 
-        }
       }
     }
   }
