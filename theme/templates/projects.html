@@ -137,6 +137,7 @@ app.controller('MainCtrl', function(ProjectData, AllTags) {
   }
   ctrl.orderProjects = function(project) {
     var idx = ProjectData.indexOf(project);
+    return idx;
     if (ctrl.anyTagsSelected()) {
       if (ctrl.isProjectSelected(project)) {
         return [0, idx];
