@@ -356,6 +356,9 @@ section.longform-article {
       img {
         max-width: 100%;
         margin-left: -3rem;
+        @media (max-width: $content-width) {
+          margin: 0 -3rem;
+        }
       }
     }
     hr {
@@ -382,6 +385,14 @@ section.longform-article {
       li {
         font-size: 0.8rem;
         margin-bottom: 0.5rem;
+      }
+    }
+    .full-width {
+      max-width: $content-width;
+      margin-left: -2* $aside-margin;
+      text-align: center;
+      @media (max-width: $content-width) {
+        margin-left: 0;
       }
     }
   }
