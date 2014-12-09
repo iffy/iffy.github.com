@@ -11,13 +11,14 @@ PATH = 'content'
 TIMEZONE = 'America/Denver'
 
 DEFAULT_LANG = u'en'
-
 DEFAULT_DATE_FORMAT = "%A, %B %d, %Y"
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
@@ -33,9 +34,7 @@ DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
-
 THEME = 'theme'
-
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['assets', 'simple_footnotes']
 
