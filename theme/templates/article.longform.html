@@ -16,7 +16,7 @@
 {% endblock %}
 
 {% block content %}
-<section class="longform-article">
+<section class="longform-article" {% if article.angularapp %}ng-app="{{ article.angularapp }}"{% endif %}>
   <header>
     <div class="article-title">
       <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
