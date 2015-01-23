@@ -11,6 +11,6 @@ We bought a new washing machine a few weeks ago.  The [sound the washer makes wh
 
 I installed [ZSNES](http://www.zsnes.com/) and then found a place to get the ROM.  I downloaded it and a second later I... wait, a second?  It took a mere second to download the game?  A second to download one of the greatest video games ever made, including the fun graphics, great music, an engaging plot and a many puzzles&mdash;things responsible for hours of entertainment.
 
-So how big is the Link to the Past ROM?  1MB.  Almost exactly as big as that image up above.  In a world where [addictive](https://itunes.apple.com/us/app/candy-crush-saga/id553834731?mt=8) and [terrible](https://itunes.apple.com/us/app/xenon-worst-game-ever/id869401794?mt=8) games are 20x the size, and [beautiful blockbusters](https://itunes.apple.com/us/app/monument-valley/id728293409?mt=8) are 250x bigger, I had to pinch myself and verify that, in fact, this old immersive gem is really smaller than most photos.
+So how big is the *Link to the Past* ROM?  1MB.  Almost exactly as big as that image up above.  In a world where [addictive](https://itunes.apple.com/us/app/candy-crush-saga/id553834731?mt=8) and [terrible](https://itunes.apple.com/us/app/xenon-worst-game-ever/id869401794?mt=8) games are 20x the size, and [beautiful blockbusters](https://itunes.apple.com/us/app/monument-valley/id728293409?mt=8) are 250x bigger, I had to pinch myself and verify that, in fact, this old immersive gem is really smaller than most photos.
 
 It reminds me that you can achieve a lot with a little.
