@@ -423,3 +423,11 @@ $blue: rgba(52, 152, 219, .8);
     background: $blue;
   }
 }
+
+.highlight {
+  background: rgb(29, 30, 25);
+  color: rgb(246, 247, 238);
+  padding: 1rem;
+  border-radius: 3px;
+  overflow-x: auto;
+}
