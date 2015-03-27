@@ -1,2 +1,0 @@
-Title: Projects
-Template: projects

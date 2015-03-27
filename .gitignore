@@ -1,7 +1,4 @@
-_site/
-*.pid
-twistd.log
-cache/
-output/
-*.pyc
+_site
+.sass-cache
 *.sublime-*
+*.pid
