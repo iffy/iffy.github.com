@@ -12,7 +12,7 @@ title: Projects
     <div class="project" ng-repeat="project in ctrl.projects|orderBy:ctrl.orderProjects" ng-class="{unselected: !ctrl.isProjectSelected(project)}">
       <a href="[[ project.url ]]" class="logo" target="_blank" ng-if="project.image"><img src="[[ project.image ]]"></a>
       <a href="[[ project.url ]]" class="name" target="_blank">[[ project.name ]]</a>
-      <a href="[[ project.url ]]" class="url" target="_blank">[[ project.url|trimscheme ]]</a>
+      <a href="[[ project.url ]]" class="url" target="_blank">[[ project.url|trimurl ]]</a>
       <div class="blurb">[[ project.blurb ]]</div>
       <div class="tags">
         <div class="tag" ng-repeat="tag in project.tags" ng-click="ctrl.toggleTag(tag)"  ng-class="{selected: ctrl.isTagSelected(tag), unselected: ctrl.anyTagsSelected()}">[[ tag ]]</div>
@@ -29,9 +29,9 @@ app.config(function($interpolateProvider) {
     $interpolateProvider.endSymbol(']]');
 });
 
-app.filter('trimscheme', function() {
+app.filter('trimurl', function() {
   return function(x) {
-    return x.split('//')[1];
+    return x.split('//')[1].split('/')[0];
   }
 });
 
@@ -49,7 +49,7 @@ app.value('ProjectData', [
     url: 'https://www.iffycan.com/speechdemo/deafhippo',
     category: 'website',
     image: '../images/hippo.small.png',
-    tags: ['web', 'AngularJS', 'Speech', 'Game'],
+    tags: ['web', 'AngularJS', 'speech', 'game', 'demo'],
     blurb: 'Deaf Hippo is a silly game for my daughter and a test of the Web Speech API as implemented in Chrome.',
   },
   {
@@ -61,27 +61,34 @@ app.value('ProjectData', [
     blurb: "SimpleFIN (SFIN) is a protocol definition that let's you give third party tools read-only access to bank transaction data.",
   },
   {
+    name: 'passwordless auth',
+    url: 'http://www.iffycan.com/passwordless',
+    category: 'website',
+    tags: ['web', 'AngularJS', 'idea', 'demo'],
+    blurb: "This is a demo of how passwordless authentication in an app might work based on ideas from all around the Internet.",
+  },
+  {
     name: 'grace',
     url: 'https://github.com/iffy/grace',
-    tags: ['Library', 'Python', 'Twisted'],
+    tags: ['library', 'Python', 'Twisted'],
     blurb: "Grace is a hot-swappable port forwarder built on top of Twisted.  It allows you to move live traffic from one port to another with no downtime and wait for existing connections to finish."
   },
   {
     name: 'crapc',
     url: 'https://github.com/iffy/crapc',
-    tags: ['Library', 'Python', 'Twisted', 'RPC'],
+    tags: ['library', 'Python', 'Twisted', 'RPC'],
     blurb: "Crapc is yet another RPC-making library.  It supports making JSON-RPC 2.0 compatible RPC systems.",
   },
   {
     name: 'crudset',
     url: 'https://github.com/iffy/crudset',
-    tags: ['Library', 'Python', 'Twisted', 'SQLAlchemy'],
+    tags: ['library', 'Python', 'Twisted', 'SQLAlchemy'],
     blurb: 'Crudset makes it easy to make CRUD functionality that returns a consistent set of fields and even nested objects.'
   },
   {
     name: 'parsefin',
     url: 'https://github.com/iffy/parsefin',
-    tags: ['Library', 'Python', 'OFX'],
+    tags: ['library', 'Python', 'OFX'],
     blurb: 'Parsefin lets you easily parse OFX/OFC files into Python dicts.'
   },
   {
@@ -93,13 +100,13 @@ app.value('ProjectData', [
   {
     name: 'ht',
     url: 'https://github.com/iffy/ht/tree/chrome-ext',
-    tags: ['Chrome extension', 'AngularJS'],
+    tags: ['Chrome extension', 'AngularJS', 'idea'],
     blurb: "ht is Chrome extension that makes it easy to visualize and change Home Teaching assignments (an activity we do in my church)."
   },
   {
     name: 'chalkboard',
     url: 'https://github.com/iffy/chalkboard',
-    tags: ['web', 'AngularJS', 'Python', 'Twisted', 'PostgreSQL', 'SQLite', 'Server-Sent Events'],
+    tags: ['web', 'AngularJS', 'Python', 'Twisted', 'PostgreSQL', 'SQLite', 'Server-Sent Events', 'idea', 'demo'],
     blurb: "At my wife's request, here is a collaborative chalkboard with sticky notes.",
   }
 ]);
