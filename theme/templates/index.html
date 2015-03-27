@@ -18,5 +18,15 @@
     </div>
   </div>
 
+  <h2 class="center">some writing...</h2>
+  <div class="post-list">
+    {% for article in articles_page.object_list %}
+      <a class="article-listing" href="{{ SITEURL }}/{{ article.url }}">
+        <div class="title">{{ article.title }}</div>
+        <div class="published">{{ article.locale_date }}</div>
+      </a>
+    {% endfor %}
+  </div>
+
 </section>
 {% endblock %}
