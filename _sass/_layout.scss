@@ -2,15 +2,33 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
 
     // Positioning context for the mobile navigation icon
     position: relative;
+    .wrapper {
+        position: relative;
+        z-index: 5;
+    }
+    .hugepic {
+        position: relative;
+        top: -56px;
+        margin-bottom: -56px;
+        img {
+            z-index: 1;
+        }
+        .attribution {
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.5;
+            padding: 0.5rem;
+        }
+    }
 }
 
 .site-title {
+    font-family: $title-font-family;
     font-size: 26px;
     line-height: 56px;
     letter-spacing: -1px;
@@ -171,6 +189,7 @@
 
 .post-list {
     margin-left: 0;
+    margin-top: 3rem;
     list-style: none;
 
     > li {
@@ -208,7 +227,14 @@
 }
 
 .post-content {
+    // skinny
+    position: relative;
+    padding-right: $aside-width;
     margin-bottom: $spacing-unit;
+
+    @include media-query($on-palm) {
+        padding-right: 0;
+    }
 
     h2 {
         font-size: 32px;
@@ -232,5 +258,48 @@
         @include media-query($on-laptop) {
             font-size: 18px;
         }
+    }
+
+    span.aside {
+        position: absolute;
+        width: $aside-width;
+        left: $content-width - $aside-width;
+        font-style: italic;
+        line-height: 1.3rem;
+        font-size: 0.8rem;
+        border: 1px solid #3498db;
+        border-width: 0px 0px 0px 1px;
+        padding: 0.5rem 0.5rem 0.5rem;
+        background: #eee;
+        &.red {
+            border-color: #e74c3c;
+        }
+        @include media-query($on-palm) {
+            display: inline-block;
+            float: right;
+            position: static;
+            margin: 0.5rem;
+            border-width: 0px;
+        }
+    }
+}
+
+
+/**
+ * Front page
+ */
+ .frontpage {
+    .blurb {
+        text-align: center;
+        .name {
+            font-size: 1.5rem;
+        }
+    }
+    .hero {
+        position: relative;
+        img {
+            width: 100%;
+        }
+        
     }
 }
