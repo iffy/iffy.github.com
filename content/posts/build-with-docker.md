@@ -3,7 +3,13 @@ Date: 2015-03-26
 Tags: personal, programming
 Template: article.longform
 
-[Docker](https://www.docker.com/) is a neat tool.  Today I made use of it to build all my static assets (JS/SASS/minification, etc...).  I got tired of manually installing Ruby, NodeJS, and Python packages on the various machines I use (OS X and Ubuntu).  So I punted to Docker.
+## tl;dr ##
+
+Consider making the "Hello, world!" instruction to build your project/docs/tests a single, simple `docker run`.  That way, your users don't have to mess around trying to get an environment working.  Host the base image on Docker hub and you're done!
+
+## Building static assets ##
+
+[Docker](https://www.docker.com/) is a neat tool.  Today I made use of it to build all my web app's static assets (SASS to CSS, JS concatenation, minification, etc...).  I got tired of manually installing Ruby, NodeJS, and Python packages on the various machines I use (OS X and Ubuntu).  So I punted to Docker.
 
 Here's my Dockerfile:
 
@@ -52,10 +58,12 @@ I create a build-capable container on any machine with Docker installed:
 
 Then I mount the project directory and build/install all the assets:
 
-    docker run -v $(PWD):/build pb-static-builder /bin/bash -l build.sh
+    docker run -v $(PWD):/build static-builder /bin/bash -l build.sh
 
-(`build.sh` is a custom script for building all the things.  You could also use grunt/gulp/whatever).
+(`build.sh` is a custom build script for this particular project.  You could also use Grunt/gulp/whatever).
 
-I could even host the built image somewhere so that I didn't even have to do the build step on each machine -- just download the image and go!
+## Collaboration win ##
+
+I did this for a personal project on which the only collaborators are myself and myself on a different computer.  But such a setup would be great on projects with lots of collaborators.
 
 Thanks, Docker!
