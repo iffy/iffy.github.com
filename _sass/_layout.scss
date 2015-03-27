@@ -190,10 +190,11 @@
 .post-list {
     margin-left: 0;
     margin-top: 3rem;
-    list-style: none;
+    //list-style: none;
 
     > li {
-        margin-bottom: $spacing-unit;
+        margin-left: $spacing-unit / 2;
+        margin-bottom: $spacing-unit / 2;
     }
 }
 
@@ -228,8 +229,32 @@
 
 .post-content {
     // skinny
-    position: relative;
-    padding-right: $aside-width;
+    &.skinny {
+        position: relative;
+        padding-right: $aside-width;
+        span.aside {
+            position: absolute;
+            width: $aside-width;
+            left: $content-width - $aside-width;
+            font-style: italic;
+            line-height: 1.3rem;
+            font-size: 0.8rem;
+            border: 1px solid #3498db;
+            border-width: 0px 0px 0px 1px;
+            padding: 0.5rem 0.5rem 0.5rem;
+            background: #eee;
+            &.red {
+                border-color: #e74c3c;
+            }
+            @include media-query($on-palm) {
+                display: inline-block;
+                float: right;
+                position: static;
+                margin: 0.5rem;
+                border-width: 0px;
+            }
+        }
+    }
     margin-bottom: $spacing-unit;
 
     @include media-query($on-palm) {
@@ -260,27 +285,11 @@
         }
     }
 
-    span.aside {
-        position: absolute;
-        width: $aside-width;
-        left: $content-width - $aside-width;
-        font-style: italic;
-        line-height: 1.3rem;
-        font-size: 0.8rem;
-        border: 1px solid #3498db;
-        border-width: 0px 0px 0px 1px;
-        padding: 0.5rem 0.5rem 0.5rem;
-        background: #eee;
-        &.red {
-            border-color: #e74c3c;
-        }
-        @include media-query($on-palm) {
-            display: inline-block;
-            float: right;
-            position: static;
-            margin: 0.5rem;
-            border-width: 0px;
-        }
+    hr {
+        height: 1px;
+        border: 0;
+        border-bottom: 1px solid $grey-color-light;
+        margin: 1rem 0;
     }
 }
 
@@ -302,4 +311,34 @@
         }
         
     }
+}
+
+/**
+ * Misc
+ */
+$yellow: rgba(241, 196, 15, .8);
+$blue: rgba(52, 152, 219, .8);
+.madlib {
+  box-sizing: border-box;
+  //font-family: 'Trykker', serif;
+  font-size: 1rem;
+  border-radius: 3px;
+  border: 3px solid $yellow;
+  padding: 0.5rem;
+  margin: -0.5rem 0;
+  display: inline;
+  width: auto;
+  &:focus,
+  &:active {
+    box-shadow: none;
+    outline: none !important;
+    background: $yellow;
+  }
+}
+.madlib.blue {
+  border: 3px solid $blue;
+  &:focus,
+  &:active {
+    background: $blue;
+  }
 }

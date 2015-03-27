@@ -2,6 +2,7 @@
 title: Dreaming of Math
 tags: personal, math, musings
 layout: post
+post_classes: skinny
 permalink: /posts/dreaming-of-math.html
 ---
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html{% if page.ng_app %} ng-app="{{ page.ng_app }}"{% endif %}>
 
   {% include head.html %}
 
