@@ -4,6 +4,7 @@ tags: personal, halloween
 layout: post
 post_classes: skinny
 permalink: /posts/wheres-ida-and-her-friend.html
+image: /images/ida/8-moretaping.jpg
 ---
 
 A few months ago, I bought [Monument Valley](http://www.monumentvalleygame.com/) (a phone/tablet game).  Here's their trailer:

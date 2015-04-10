@@ -3,6 +3,7 @@ title: Good things come in small packages
 tags: dev,gaming
 layout: post
 permalink: /posts/good-things-come-in-small-packages.html
+image: /images/link/link.bmp
 ---
 
 I hope the following picture (credit to [Zeldapedia](http://zelda.wikia.com/wiki/The_Legend_of_Zelda:_A_Link_to_the_Past_characters)) takes a noticeable time to load in your browser:
