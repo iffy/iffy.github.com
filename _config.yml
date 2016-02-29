@@ -15,4 +15,6 @@ github_username:  iffy
 # Build settings
 markdown: kramdown
 highlighter: pygments
+gems:
+  - jemoji
 
