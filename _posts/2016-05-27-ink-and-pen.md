@@ -1,6 +1,7 @@
 ---
 title: Ink and Pen
 layout: post
+image: /images/pen/smalltower.jpg
 ---
 
 > By word, first, do we approach heaven.
@@ -79,7 +80,7 @@ The NPR reporter subtly swapped the *actual words* "biological sex" with "gender
 
 ---
 
-There are many other towers.  Movies, YouTube, radio, news, social media, blogs, music, etc...  Measure their words.  Check the facts.  Speak true words.
+There are many other towers.  Movies, YouTube, radio, news, social media, blogs, music, etc...  Measure their words.  Check the facts.  Speak true words in response.
 
 Want to read a (much-better-written) article about how lies propagate throughout the Internet?  This one about [Street Sharks](http://www.geek.com/news/how-i-used-lies-about-a-cartoon-to-prove-history-is-meaningless-on-the-internet-1656188/) is great.
 
