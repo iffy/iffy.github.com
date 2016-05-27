@@ -120,6 +120,11 @@ blockquote {
     > :last-child {
         margin-bottom: 0;
     }
+    & em,
+    & strong {
+        font-style: normal;
+        color: $text-color;
+    }
 }
 
 
