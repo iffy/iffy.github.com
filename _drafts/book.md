@@ -64,6 +64,10 @@ All the software I used is free:  Google Docs (already mentioned), [GIMP](https:
 
 Since I wanted a hardcover copy, the most expensive part of this process was publishing.  I used [Ingram Spark](http://www.ingramspark.com/).  If I'd wanted a softcover, I could have published using Amazon's CreateSpace for free.
 
+---
+
+Most of the painting work was done after the girls were asleep.  I averaged just less than one picture per night and only had to scrap one really terrible picture.  Man... that was a failure :)
+
 All counted, I spent about XXX to make this (and many hours&mdash;but not an excessive or burdensome amount).
 
 ## What I learned
