@@ -3,23 +3,36 @@ title: I made a book
 layout: post
 ---
 
+<script>
+$(function() {
+    $('a[href^=http]').each(function() {
+        if (this.href.indexOf(location.hostname) === -1) {
+            $(this).attr({
+                target: "_blank",
+                title: "Opens in a new window"
+            });
+        }
+    })
+});
+</script>
+
 I made a book: *The Proud Pink Balloon*.  It contains words I wrote and pictures I painted.  And I had a blast making it!
 
 If you'd like to buy a copy, email me, and I'll let you know when it's available.
 
 ## How this came about
 
-I've noticed my eldest becoming more keen on things that are prettiest and fastest and best.  Too keen.  Keen enough to feel bad for not being the "best" and trying to make sure others know when she is the "best."  So I made up a story about a like-minded balloon.  Then I decided to make it into a picture book.
+I've noticed my eldest becoming more keen on things that are prettiest and fastest and best.  Too keen.  Keen enough to feel bad for not being the "best" and trying to make sure others know when she is the "best."  So I made up a story about a like-minded balloon.  The girls liked the story, so I decided to make it into a picture book.
 
-"A book?" you ask, "but you can't even draw."  Well, sure, but when has inability ever held me back?  A few friends inspired me to think I might actually pull it off.
+"A picture book?" you ask, "but you can't even draw."  Well, sure, but when has inability ever held me back?  A few friends inspired me to think I might actually pull it off.
 
 First, [Mr. Jake Parker's](http://mrjakeparker.com/) video made me barge ahead and self-impose a deadline when the idea first struck:
 
 <iframe width="560" height="315" style="margin: 0 auto;" src="https://www.youtube.com/embed/lRtV-ugIT0k" frameborder="0" allowfullscreen></iframe>
 
-Also, I like reading [J Travis Washburn's](http://www.jwashburn.com/) fun stories.  And Ben Crowder (whose surname auto-corrects to either *crowbar* or *crusher*) wrote and illustrated [a fun children's book.](http://bencrowder.net/books/picture-books/the-circle-book/)
+Also, I like reading [J Travis Washburn's](http://www.jwashburn.com/) fun stories.  Ben Crowder (whose surname auto-corrects to either *crowbar* or *crusher*) wrote and illustrated [a fun children's book.](http://bencrowder.net/books/picture-books/the-circle-book/)  And [Chris McClelland](http://theprovocanyonreview.net/about-us.html) has published some great stories.
 
-This thought-train then followed:
+My train of thought then became:
 
 "If talented people can make great books, then surely I can make a mediocre one, right?  Or if not mediocre, at least bearable. Or at least I can publish something that won't get me thrown in jail."
 
@@ -37,6 +50,8 @@ But since I had so much fun making it, I don't really care if it's great :) The 
 
 ## Tools, Method and Cost
 
+The nitty-gritty:
+
 I composed the story with Google Docs.  Since I sometimes walk partway to work, this turned out to work very well&mdash;I often jotted down ideas or made edits with my phone while walking.
 
 ![Art tools](/images/book/arttools_med.png)
@@ -45,17 +60,19 @@ I drew the pictures in pencil on some heavy-duty art paper from Target ($10), th
 
 I scanned many of the illustrations with our HP all-in-one scanner.  But when it refused to see all of the pink in a few of the drawings, I borrowed my parent's Epson scanner for those.  Resolution for the scanned pictures ranges from 600 to 1200 dpi.
 
-Oh, I also used a spray bottle, an iron and some heavy books to [flatten some of the warped paintings](https://www.youtube.com/watch?v=tL6fxMgtU9A).
+Oh, I also enlisted a spray bottle, an iron and some heavy books to [flatten some of the warped paintings](https://www.youtube.com/watch?v=tL6fxMgtU9A).
 
-All the software I used is free.  I used Google Docs (already mentioned), [GIMP](https://www.gimp.org/) for touching up and adjusting some colors and [Scribus](https://www.scribus.net/) for laying out the book (to make into a PDF).
+All the software I used is free:  Google Docs (already mentioned), [GIMP](https://www.gimp.org/) for touching up and adjusting some colors and [Scribus](https://www.scribus.net/) for laying out the book (to make into a PDF).
 
 Since I wanted a hardcover copy, the most expensive part of this process was publishing.  I used [Ingram Spark](http://www.ingramspark.com/).  If I'd wanted a softcover, I could have published using Amazon's CreateSpace for free.
 
 ## Learned
 
-Use white paper
-Just go for it
-Use the same paper throughout
-I wish I had a thinner pen
+- Use white paper
+- Just go for it
+- Use the same paper throughout
+- Get paper the size of the finished pages
+- I wish I had a thinner pen
+- Illustrating is difficult, but fun
 
 
