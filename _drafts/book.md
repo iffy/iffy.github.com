@@ -48,9 +48,7 @@ But since I had so much fun making it, I don't really care if it's great :) The 
 
 (Yeah, yeah, the bird has contrails...)
 
-## Tools, Method and Cost
-
-The nitty-gritty:
+## Tools, method and cost
 
 I composed the story with Google Docs.  Since I sometimes walk partway to work, this turned out to work very well&mdash;I often jotted down ideas or made edits with my phone while walking.
 
@@ -66,13 +64,26 @@ All the software I used is free:  Google Docs (already mentioned), [GIMP](https:
 
 Since I wanted a hardcover copy, the most expensive part of this process was publishing.  I used [Ingram Spark](http://www.ingramspark.com/).  If I'd wanted a softcover, I could have published using Amazon's CreateSpace for free.
 
-## Learned
+All counted, I spent about XXX to make this (and many hours&mdash;but not an excessive or burdensome amount).
 
-- Use white paper
-- Just go for it
-- Use the same paper throughout
-- Get paper the size of the finished pages
-- I wish I had a thinner pen
-- Illustrating is difficult, but fun
+## What I learned
+
+![Samples](/images/book/severalpics_med.png)
+
+1. If you can't draw people, making a book about balloons is a great idea :)
+
+1. If you're going to print a book on white paper, draw your pictures on white paper.  Mine was a little yellow so I had to do extra digital fiddling because of it.
+
+1. Use the same paper throughout.  I ran out, but impatiently used lighter-weight paper for a few drawings.  It turned out okay, but I wish I had used the same paper.
+
+1. Get paper of about the same size as the finished product will be.  I misjudged margins and bleed on a few of the pages so I had to cut off more of the picture than I'd like.
+
+1. I wish I had a thinner pen for some parts.
+
+1. Illustrating is difficult.  But it's really fun.  Giddy fun.
+
+1. I'm really curious how *real* illustrators do watercolor paintings for books.  Cause... I just kind of hacked together my method as I went.
+
+1. Do what Jake said in his video&mdash;finish something!  It's fun.
 
 
