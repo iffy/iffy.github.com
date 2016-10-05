@@ -3,6 +3,23 @@ title: I made a book
 layout: post
 ---
 
+<style>
+.spoiler {
+    cursor: pointer;
+    color: bisque;
+    background-color: bisque;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+}
+.spoiler:focus {
+    color: inherit;
+    background-color: inherit;
+    outline: none;
+}
+</style>
+
 <script>
 $(function() {
     $('a[href^=http]').each(function() {
@@ -40,7 +57,7 @@ Courage, she is a slippery slope.
 
 ---
 
-Joking aside, I'm not sure if it's a terrific story or just so-so. Some people, I'm sure, will hate the book (because, spoiler alert: if you've ever seen a child with a balloon, you know how it ends).
+Joking aside, I'm not sure if it's a terrific story or just so-so. I'm sure some people will hate the book (because, spoiler alert: <span class="spoiler" tabindex="0">if you've ever seen a child with a balloon, you know how it ends</span>).
 
 But since I had so much fun making it, I don't really care if it's great :) The illustrations are at least good enough that you can recognize the objects they attempt to depict.  For instance, when I finished this bird picture, I exclaimed out loud, "Hey! It looks like a bird! Woah!" Yes, I'm *that* good.
 
@@ -60,7 +77,14 @@ I scanned many of the illustrations with our HP all-in-one scanner.  But when it
 
 Oh, I also enlisted a spray bottle, an iron and some heavy books to [flatten some of the warped paintings](https://www.youtube.com/watch?v=tL6fxMgtU9A).
 
-All the software I used is free:  Google Docs (already mentioned), [GIMP](https://www.gimp.org/) for touching up and adjusting some colors and [Scribus](https://www.scribus.net/) for laying out the book (to make into a PDF).
+All the software I used is free:  Google Docs (already mentioned), [GIMP](https://www.gimp.org/) for touching up and adjusting some colors
+
+![GIMP](/images/book/gimp.png)
+
+and [Scribus](https://www.scribus.net/) for laying out the book (to make into a PDF).
+
+![Scribus](/images/book/scribus.png)
+
 
 Since I wanted a hardcover copy, the most expensive part of this process was publishing.  I used [Ingram Spark](http://www.ingramspark.com/).  If I'd wanted a softcover, I could have published using Amazon's CreateSpace for free.
 
@@ -71,8 +95,6 @@ Most of the painting work was done after the girls were asleep.  I averaged just
 All counted, I spent about XXX to make this (and many hours&mdash;but not an excessive or burdensome amount).
 
 ## What I learned
-
-![Samples](/images/book/severalpics_med.png)
 
 1. If you can't draw people, making a book about balloons is a great idea :)
 
@@ -90,4 +112,4 @@ All counted, I spent about XXX to make this (and many hours&mdash;but not an exc
 
 1. Do what Jake said in his video&mdash;finish something!  It's fun.
 
-
+![Samples](/images/book/severalpics_med.png)
