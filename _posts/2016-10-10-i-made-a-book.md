@@ -2,6 +2,7 @@
 title: I made a book
 layout: post
 permalink: /proudpink
+image: /images/book/bird_med.png
 ---
 
 <style>
