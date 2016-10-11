@@ -36,7 +36,7 @@ $(function() {
 });
 </script>
 
-I made a book: *The Proud Pink Balloon*.  It contains words I wrote and pictures I painted.  And I had a blast making it!  If you'd like to buy a copy, email me (haggardii@gmail.com), and I'll let you know when it's available.
+I made a book: *The Proud Pink Balloon*.  It contains words I wrote and pictures I painted.  And I had a blast making it!  If you'd like to buy a copy, [send me your email address](https://docs.google.com/forms/d/e/1FAIpQLSeJyo8Q_wSrGvjlgUGAN8YDFQKyOi51dodOiX0YUTVTWcteaA/viewform) and I'll let you know as soon as it's available.
 
 ## How this came about
 
