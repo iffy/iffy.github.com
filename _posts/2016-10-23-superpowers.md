@@ -24,7 +24,7 @@ Growing up, my dad often sang part of a certain hymn and then tried to point out
 
 As I become wiser to the world, those words become more and more profound.  I now find myself singing the same hymn.  The world is full of falsehoods and unknowns.  Falsehoods are spread (and truth witheld) both maliciously and unintentionally.
 
-I had to laugh as I looked for a recording of the hymn to embed.  Here's one I found&mdash;ironic false advertising at its best:
+I had to laugh as I looked for a recording of the hymn to embed.  Here's one I found&mdash;ironic false advertising at its best (since the song that actually plays is not *Oh Say, What is Truth?*):
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/G96CRtZmh2w" frameborder="0" allowfullscreen></iframe>
 
