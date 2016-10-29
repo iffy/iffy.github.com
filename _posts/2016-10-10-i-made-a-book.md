@@ -36,7 +36,7 @@ $(function() {
 });
 </script>
 
-I made a book: *The Proud Pink Balloon*.  It contains words I wrote and pictures I painted.  And I had a blast making it!  If you'd like to buy a copy, [send me your email address](https://docs.google.com/forms/d/e/1FAIpQLSeJyo8Q_wSrGvjlgUGAN8YDFQKyOi51dodOiX0YUTVTWcteaA/viewform) and I'll let you know as soon as it's available.
+I made a book: *The Proud Pink Balloon*.  It contains words I wrote and pictures I painted.  And I had a blast making it!  You can <a href="http://www.theproudpinkballoon.com">buy a copy here</a> if you'd like.
 
 ## How this came about
 
@@ -117,3 +117,5 @@ All counted, so far I've spent about $15 to make this (and many hours&mdash;but 
 1. Do what Jake said in his video&mdash;finish something!  It's fun.
 
 ![Samples](/images/book/severalpics_med.png)
+
+The book is available for sale <a href="http://www.theproudpinkballoon.com">here</a>.
