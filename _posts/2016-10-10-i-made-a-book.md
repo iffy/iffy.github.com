@@ -74,7 +74,7 @@ I composed the story with Google Docs.  Since I sometimes walk partway to work, 
 
 ![Art tools](/images/book/arttools_med.png)
 
-I drew the pictures in pencil on some heavy-duty art paper from Target ($10), then painted them with my daughter's [8-Color Crayola water color paints](http://www.target.com/p/crayola-8ct-watercolor-painting-kit-multicolor/-/A-14151836).  Well... I started using hers, but I had to buy my own after she turned her yellow paint murky green ($2).  After the paint dried, I inked the drawings with a [Pilot Precise V5 pen](https://www.amazon.com/Pilot-Precise-Stick-Rolling-35334/dp/B00006IEBI) ($2) and my favorite [Zebra F-301 pen](https://www.amazon.com/Zebra-Stainless-Retractable-Pen-27112/dp/B001JT1ADW) ($1).
+I drew the pictures in pencil on some heavy-duty art paper from Target, then painted them with my daughter's [8-Color Crayola water color paints](http://www.target.com/p/crayola-8ct-watercolor-painting-kit-multicolor/-/A-14151836).  Well... I started using hers, but I had to buy my own after she turned her yellow paint murky green.  After the paint dried, I inked the drawings with a [Pilot Precise V5 pen](https://www.amazon.com/Pilot-Precise-Stick-Rolling-35334/dp/B00006IEBI) and my favorite [Zebra F-301 pen](https://www.amazon.com/Zebra-Stainless-Retractable-Pen-27112/dp/B001JT1ADW).
 
 I scanned many of the illustrations with our HP all-in-one scanner.  But when it refused to see all of the pink in a few of the drawings, I borrowed my parent's Epson scanner for those.  Resolution for the scanned pictures ranges from 600 to 1200 dpi.
 
@@ -95,6 +95,101 @@ All counted, so far I've spent about $15 to make this (and many hours&mdash;but 
 <!-- Since I wanted a hardcover copy, the most expensive part of this process was publishing.  I used [Ingram Spark](http://www.ingramspark.com/).  If I'd wanted a softcover, I could have published using Amazon's CreateSpace for free.
 -->
 
+<style>
+div.receipt {
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0px 5px 6px -2px rgba(0,0,0,0.2);
+  display: inline-block;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  font-family: monospace;
+  float: left;
+  background-color: bisque;
+}
+div.receipt .title {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+div.receipt table {
+  border-collapse: collapse;
+}
+div.receipt table td {
+  padding: 3px 12px;
+}
+div.receipt table td:first-child {
+  text-align: right;
+}
+div.receipt table tr.section td {
+  border-top: 1px solid rgba(0,0,0,0.5);
+}
+</style>
+
+<div class="receipt" style="transform: rotateZ(3deg);">
+  <div class="title">supplies</div>
+  <table class="receipt">
+    <tr>
+      <td>$2</td>
+      <td>paint</td>
+    </tr>
+    <tr>
+      <td>$10</td>
+      <td>paper</td>
+    </tr>
+    <tr>
+      <td>$3</td>
+      <td>pens</td>
+    </tr>
+    <tr class="section">
+      <td>$15</td>
+      <td>total</td>
+    </tr>
+  </table>
+</div>
+
+<div class="receipt" style="transform: rotateZ(5deg);">
+  <div class="title">paperback</div>
+  <table>
+    <tr>
+      <td>$7.24</td>
+      <td>first proof</td>
+    </tr>
+    <tr>
+      <td>$7.24</td>
+      <td>second proof</td>
+    </tr>
+    <tr class="section">
+      <td>$14.48</td>
+      <td>total</td>
+    </tr>
+  </table>
+</div>
+
+<div class="receipt" style="transform: rotateZ(-2deg);">
+  <div class="title">hardback</div>
+  <table>
+    <tr>
+      <td>$85</td>
+      <td>ISBN</td>
+    </tr>
+    <tr>
+      <td>$49</td>
+      <td>setup fee</td>
+    </tr>
+    <tr>
+      <td>-$49</td>
+      <td>coupon!</td>
+    </tr>
+    <tr class="section">
+      <td>$85</td>
+      <td>total</td>
+    </tr>
+  </table>
+</div>
+
+<div style="clear: both; margin-bottom: 1rem;"></div>
+
 
 ## What I learned
 
@@ -113,6 +208,10 @@ All counted, so far I've spent about $15 to make this (and many hours&mdash;but 
 1. Illustrating is difficult.  But it's really fun.  Giddy fun.
 
 1. I'm really curious how *real* illustrators do watercolor paintings for books.  Cause... I just kind of hacked together my method as I went.
+
+1. Listening to people read your book out loud is really enlightening.
+
+1. Get feedback *early.*
 
 1. Do what Jake said in his video&mdash;finish something!  It's fun.
 
