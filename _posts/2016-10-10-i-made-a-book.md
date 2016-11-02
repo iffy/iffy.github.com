@@ -98,14 +98,13 @@ All counted, so far I've spent about $15 to make this (and many hours&mdash;but 
 <style>
 div.receipt {
   padding: 1rem 1.5rem;
-  border: 1px solid rgba(0,0,0,0.2);
-  box-shadow: 0px 5px 6px -2px rgba(0,0,0,0.2);
+  box-shadow: 0px 5px 13px -3px rgba(0,0,0,0.4);
   display: inline-block;
   margin-bottom: 1rem;
   margin-right: 1rem;
   font-family: monospace;
   float: left;
-  background-color: bisque;
+  background: url(/images/book/paper.jpg);
 }
 div.receipt .title {
   font-weight: bold;
@@ -148,7 +147,7 @@ div.receipt table tr.section td {
   </table>
 </div>
 
-<div class="receipt" style="transform: rotateZ(5deg);">
+<div class="receipt" style="transform: rotateZ(-1deg);">
   <div class="title">paperback</div>
   <table>
     <tr>
