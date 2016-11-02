@@ -205,6 +205,8 @@ div.receipt table tr.section td {
 
 1. I'm really curious how *real* illustrators do watercolor paintings for books.  Cause... I just kind of hacked together my method as I went.
 
+1. It would probably work better to do important colors in one go (i.e. paint the skin on *all* the pages, then move to the hair on *all* the pages, etc...)
+
 1. Listening to people read your book out loud is really enlightening.
 
 1. Get feedback *early.*
