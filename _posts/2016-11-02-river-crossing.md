@@ -1,7 +1,7 @@
 ---
 title: River Crossing Riddle
 layout: post
-image: /images/river/lion.svg
+image: /images/river/lion.png
 ---
 
 The river crossing riddle is described in this video (it's okay to play it, it will probably stop before revealing the solution):
