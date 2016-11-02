@@ -90,10 +90,7 @@ and [Scribus](https://www.scribus.net/) for laying out the book (to make into a 
 
 Most of the painting work was done after the girls were asleep.  I averaged just less than one picture per night and only had to scrap one really terrible picture.  Man... that was a failure :)
 
-All counted, so far I've spent about $15 to make this (and many hours&mdash;but not an excessive or burdensome amount).  Publishing will increase the amount significantly, so I'll update when I have that information. (I'm still trying to decide between self-publishing and not).
-
-<!-- Since I wanted a hardcover copy, the most expensive part of this process was publishing.  I used [Ingram Spark](http://www.ingramspark.com/).  If I'd wanted a softcover, I could have published using Amazon's CreateSpace for free.
--->
+Here are my total costs.  You can see that doing a hardcover greatly increases the cost, and that you can make a paperback for practically no money.
 
 <style>
 div.receipt {
