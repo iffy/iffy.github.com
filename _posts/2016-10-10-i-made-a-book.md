@@ -112,7 +112,7 @@ div.receipt table {
   border-collapse: collapse;
 }
 div.receipt table td {
-  padding: 3px 12px;
+  padding: 3px 6px;
 }
 div.receipt table td:first-child {
   text-align: right;
@@ -177,8 +177,12 @@ div.receipt table tr.section td {
       <td>-$49</td>
       <td>coupon!</td>
     </tr>
+    <tr>
+      <td>$23.43</td>
+      <td>proof</td>
+    </tr>
     <tr class="section">
-      <td>$85</td>
+      <td>$108.43</td>
       <td>total</td>
     </tr>
   </table>
