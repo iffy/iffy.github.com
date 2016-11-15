@@ -179,16 +179,28 @@ div.receipt table tr.section td {
     </tr>
     <tr>
       <td>$23.43</td>
-      <td>proof</td>
+      <td>first proof</td>
+    </tr>
+    <tr>
+      <td>$25.00</td>
+      <td>resubmit fee</td>
+    </tr>
+    <tr>
+      <td>$23.24</td>
+      <td>second proof</td>
     </tr>
     <tr class="section">
-      <td>$108.43</td>
+      <td>$156.67</td>
       <td>total</td>
     </tr>
   </table>
 </div>
 
 <div style="clear: both; margin-bottom: 1rem;"></div>
+
+I used [CreateSpace](https://www.createspace.com/) for the paperback and [IngramSpark](http://www.ingramspark.com/) for the hardback.
+
+I'm tempted to complain that IngramSpark is really slow and expensive, but in reality CreateSpace is just ridiculously fast and inexpensive.  With CreateSpace, you can have a book in your hands within 3 days of starting.  With IngramSpark (unless you're willing to fork over $60 for express service) you have to wait at least a week and probably longer.
 
 
 ## What I learned
@@ -214,6 +226,8 @@ div.receipt table tr.section td {
 1. Listening to people read your book out loud is really enlightening.
 
 1. Get feedback *early.*
+
+1. Holding a hardcover book in your hands that you authored/illustrated is really satisfying.
 
 1. Do what Jake said in his video&mdash;finish something!  It's fun.
 
