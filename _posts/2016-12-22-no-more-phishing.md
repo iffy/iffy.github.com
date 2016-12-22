@@ -18,7 +18,7 @@ Phishing (when a person is tricked into divulging credentials or other authentic
 1. could easily detect phishing attempts and
 2. were not be susceptible to phishing attempts in the first place.
 
-I want to build a phishing-resistant authentication system (because I'm not sure a phishing-*proof* system is practical).  Let's ground it in this real world with this scenario:
+I want to build a phishing-resistant authentication system (because I'm not sure a phishing-*proof* system is practical).  Let's ground it in this real world scenario:
 
 <div style="padding: 1rem 2rem; margin: 1rem 0; background-color: bisque;">
 Great Aunt Alice wants to access her Bob the Bank account through the tablet her grandchildren gave her.  Nefarious Nellie wants to steal Great Aunt Alice's credentials.
