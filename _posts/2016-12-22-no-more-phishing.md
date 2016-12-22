@@ -125,7 +125,7 @@ The Device may be equipped with GPS and be deactivated/or emit notifications whe
 
 ### Family and Friends
 
-None of the above is really all that novel.  If you have a working device and knowledge of the PIN, things work pretty well.  It's the recovery cases of an authentication scheme that are tricky.  For instance, if Alice:
+None of the above is really all that novel.  It's the recovery cases of an authentication scheme that are tricky.  For instance, if Alice:
 
 - forgets her PIN
 - loses her Device
