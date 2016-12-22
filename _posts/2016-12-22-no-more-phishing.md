@@ -146,7 +146,7 @@ When Alice visits the known site, she enters her PIN on the Device and is signed
 
 ### 2. More importantly, Alice should know when she's NOT browsing the legitimate bank's website.
 
-When Alice visits Nellie's phishing site, the browser knowns that it's a different website and won't divulge the credentials.  To Alice, it will look like she's signing up for a new website.  And if Alice is synced with Tommy and Janice, they'll be notified if she does sign up.
+When Alice visits Nellie's phishing site, the browser knows that it's a different website and won't divulge the credentials.  To Alice, it will look like she's signing up for a new website.  And if Alice is synced with Tommy and Janice, they'll be notified if she does sign up.
 
 ### 3. Bob the Bank should be able to authenticate Alice.
 
