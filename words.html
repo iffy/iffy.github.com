@@ -30,17 +30,18 @@ permalink: /words
 }
 .word-entry .definition {
   display: block;
+  margin-left: 2rem;
+  text-indent: -1.4rem;
 }
 .word-entry .definition:before {
   content: '\2014';
   color: rgba(0,0,0,0.2);
   margin-right: .4rem;
-  margin-left: 1rem;
 }
 .word-entry .sample {
   display: block;
   margin-top: 0;
-  margin-left: 1rem;
+  margin-left: 0;
   height: 0;
   opacity: 0;
 }
@@ -76,6 +77,18 @@ permalink: /words
   font-style: normal;
   color: rgba(0,0,0,0.2);
 }
+
+.ellipsis {
+  margin-left: 2rem;
+  color: black;
+  letter-spacing: 10px;
+  margin-bottom: -1rem;
+}
+.word-entry:active .ellipsis,
+.word-entry:focus .ellipsis,
+.word-entry:target .ellipsis {
+  display: none;
+}
 </style>
 
 
@@ -99,7 +112,10 @@ permalink: /words
     {% endif %}
   </div>
   {% if word.definition %}<div class="definition">{{ word.definition }}</div>{% endif %}
-  {% if word.sample %}<div class="sample">{{ word.sample }}</div>{% endif %}
+  {% if word.sample %}
+    <div class="ellipsis">...</div>
+    <div class="sample">{{ word.sample }}</div>
+  {% endif %}
 </div>
 
 {% endfor %}
