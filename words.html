@@ -79,10 +79,11 @@ permalink: /words
 }
 
 .ellipsis {
-  margin-left: 2rem;
-  color: black;
+  display: inline;
+  margin-left: .5rem;
+  color: lightgrey;
   letter-spacing: 10px;
-  margin-bottom: -1rem;
+  smargin-bottom: -1rem;
 }
 .word-entry:active .ellipsis,
 .word-entry:focus .ellipsis,
@@ -101,6 +102,9 @@ permalink: /words
 <a name="{{ word.word }}"></a>
 <div class="word-entry" tabindex="0" id="{{ word.word }}">
   <div class="word">{{ word.word }}</div>
+  {% if word.sample %}
+  <div class="ellipsis">&bull;&bull;&bull;</div>
+  {% endif %}
   <div class="meta">
     <div><a href="#{{ word.word }}">&sect;</a></div>
     {% if word.phonetic %}<div class="phonetic">{{ word.phonetic }}</div>{% endif %}
@@ -111,10 +115,9 @@ permalink: /words
     </div>
     {% endif %}
   </div>
-  {% if word.definition %}<div class="definition">{{ word.definition }}</div>{% endif %}
+  {% if word.definition %}<div class="definition">{{ word.definition | newline_to_br }}</div>{% endif %}
   {% if word.sample %}
-    <div class="ellipsis">...</div>
-    <div class="sample">{{ word.sample }}</div>
+  <div class="sample">{{ word.sample }}</div>
   {% endif %}
 </div>
 
