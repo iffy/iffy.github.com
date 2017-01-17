@@ -1,5 +1,6 @@
 ---
 layout: default
+menu: main
 title: Words
 ---
 
@@ -7,7 +8,8 @@ title: Words
 @import url('https://fonts.googleapis.com/css?family=Averia+Serif+Libre');
 
 .word-entry {
-  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
   cursor: pointer;
   border-left: 3px solid rgba(0,0,0,0);
   margin-left: -1rem;
@@ -34,6 +36,20 @@ title: Words
   margin-right: .4rem;
   margin-left: 1rem;
 }
+.word-entry .sample {
+  display: block;
+  margin-top: 0;
+  margin-left: 1rem;
+  height: 0;
+  opacity: 0;
+}
+.word-entry:active .sample,
+.word-entry:focus .sample,
+.word-entry:target .sample {
+  margin-top: 1rem;
+  height: auto;
+  opacity: 1;
+}
 .source {
   font-style: italic;
 }
@@ -41,7 +57,6 @@ title: Words
   display: inline-block;
   font-size: .8rem;
   opacity: 0;
-  transition: opacity 0.2s;
   position: relative;
   bottom: 4px;
 }
@@ -83,7 +98,7 @@ title: Words
     {% endif %}
   </div>
   {% if word.definition %}<div class="definition">{{ word.definition }}</div>{% endif %}
-  
+  {% if word.sample %}<div class="sample">{{ word.sample }}</div>{% endif %}
 </div>
 
 {% endfor %}
