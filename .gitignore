@@ -3,3 +3,4 @@ _site
 *.sublime-*
 *.pid
 Gemfile.lock
+.~*

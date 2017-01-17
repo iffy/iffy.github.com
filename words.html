@@ -1,0 +1,89 @@
+---
+layout: default
+title: Words
+---
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Averia+Serif+Libre');
+
+.word-entry {
+  margin-bottom: 2rem;
+  cursor: pointer;
+  border-left: 3px solid rgba(0,0,0,0);
+  margin-left: -1rem;
+  padding-left: 1rem;
+}
+.word-entry:active,
+.word-entry:focus,
+.word-entry:target {
+  outline: none;
+  border-color: steelblue;
+}
+.word-entry .word {
+  display: inline;
+  font-family: 'Averia Serif Libre', cursive;
+  font-size: 2rem;
+  font-weight: 100;
+}
+.word-entry .definition {
+  display: block;
+}
+.word-entry .definition:before {
+  content: '\2014';
+  color: rgba(0,0,0,0.2);
+  margin-right: .4rem;
+  margin-left: 1rem;
+}
+.source {
+  font-style: italic;
+}
+.word-entry .meta {
+  display: inline-block;
+  font-size: .8rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+  position: relative;
+  bottom: 4px;
+}
+
+.word-entry:active .meta,
+.word-entry:focus .meta,
+.word-entry:target .meta {
+  opacity: 1;
+}
+.word-entry .meta > div {
+  display: inline-block;
+}
+.word-entry .meta > div:before {
+  content: '\2013';
+  margin: 0 .3rem;
+  font-style: normal;
+  color: rgba(0,0,0,0.2);
+}
+</style>
+
+
+<p>
+  Here are some words I either like, don't/didn't know, couldn't define or couldn't form into a novel sentence.  If often find these while reading good books, write them down on my bookmark, then put them here.
+</p>
+
+{% assign sorted_words = (site.data.words | sort: 'word') %}
+{% for word in sorted_words %}
+<a name="{{ word.word }}"></a>
+<div class="word-entry" tabindex="0" id="{{ word.word }}">
+  <div class="word">{{ word.word }}</div>
+  <div class="meta">
+    <div><a href="#{{ word.word }}">&sect;</a></div>
+    {% if word.phonetic %}<div class="phonetic">{{ word.phonetic }}</div>{% endif %}
+    {% if word.part %}<div class="part-of-speech">{{ word.part }}</div>{% endif %}
+    {% if word.src %}
+    <div class="source">
+      {{ word.src }}{% if word.src_page %} p{{ word.src_page }}{% endif %}
+    </div>
+    {% endif %}
+  </div>
+  {% if word.definition %}<div class="definition">{{ word.definition }}</div>{% endif %}
+  
+</div>
+
+{% endfor %}
