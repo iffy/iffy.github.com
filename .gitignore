@@ -4,3 +4,4 @@ _site
 *.pid
 Gemfile.lock
 .~*
+.DS_Store
