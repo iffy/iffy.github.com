@@ -92,12 +92,13 @@ permalink: /words
 }
 </style>
 
+{% assign sorted_words = (site.data.words | sort: 'word') %}
 
 <p>
-  Here are some words I either like, don't/didn't know, couldn't define or couldn't form into a novel sentence.  I often find these while reading good books, write them down on my bookmark, then put them here.
+  Here are {{ sorted_words|size }} words I either like, don't/didn't know, couldn't define or couldn't form into a novel sentence.  I often find these while reading good books, write them down on my bookmark, then put them here.
 </p>
 
-{% assign sorted_words = (site.data.words | sort: 'word') %}
+
 {% for word in sorted_words %}
 <a name="{{ word.word }}"></a>
 <div class="word-entry" tabindex="0" id="{{ word.word }}">
