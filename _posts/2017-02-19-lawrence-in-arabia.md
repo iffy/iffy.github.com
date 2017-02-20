@@ -55,7 +55,9 @@ This is a really minor complaint, as it occupies so few pages in a long book (th
 
 ## Bias
 
-I sense that Anderson is biased against the state of Israel.  He provides compelling evidence showing that the formation of Israel (and the European looting of Arabia in general) was a botched endeavor doomed to fail.  But in every instance when the evidence can be read either in favor of, or against Zionist intentions, he always sides against.  I think I've demonstrated my abundant lack of knowledge about this part of the world, so I think I came into this book fairly free from bias in the opposite direction.  Anyway, I want to read what other pro-Israel people have to say about it.
+I sense that Anderson is biased against the state of Israel.  He provides compelling evidence showing that the formation of Israel (and the European looting of Arabia in general) was a botched endeavor doomed to fail.  But in every instance when the evidence can be read either in favor of, or against Zionist intentions, he always sides against.
+
+Perhaps Anderson's conclusions are correct.  But I have a hard time trusting that he's being objective when I sense his bias.  Anyway, I want to read what other pro-Israel people have to say about it.
 
 ---
 
