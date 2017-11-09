@@ -4,44 +4,80 @@ menu: main
 title: Projects
 ---
 
-<div ng-app="projects" ng-controller="MainCtrl as ctrl" class="project-page">
-  <div class="tags tag-list">
-    <div class="tag" ng-repeat="tag in ctrl.all_tags|orderBy:'toString()'" ng-click="ctrl.toggleTag(tag)" ng-class="{selected: ctrl.isTagSelected(tag)}">[[ tag ]]</div>
+<style>
+.project {
+  box-sizing: border-box;
+  padding: 2rem;
+  border-radius: 3px;
+  transition: opacity 0.2s, background-color 0.2s;
+  display: flex;
+  text-decoration: none;
+  color: #424242;
+}
+a.project:visited {
+  color: #424242;
+}
+a.project:hover {
+  background-color: rgba(241, 196, 15, 0.1);
+  text-decoration: none;
+}
+.project .logo {
+  width: 64px;
+  min-width: 64px;
+  margin-right: 2rem;
+}
+.project .logo img {
+  width: 100%;
+}
+.project .data {
+
+}
+.project .title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2rem;
+  display: block;
+  margin-bottom: -0.75rem;
+}
+
+.tags {
+
+}
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.5rem 0.1rem;
+  margin: 0.2rem;
+  font-size: 0.8rem;
+  background: rgba(241, 196, 15, 0.3);
+  transition: background 0.2s, opacity 0.2s;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.tag.unselected {
+  opacity: 0.5;
+}
+.tag.selected {
+  background: rgba(241, 196, 15, 1.0);
+  opacity: 1.0;
+}
+</style>
+
+<div class="project-page">
+  <div class="tags tag-list" id="taglist">
   </div>
-  <div class="project-list">
-    <div class="project" ng-repeat="project in ctrl.projects|orderBy:ctrl.orderProjects" ng-class="{unselected: !ctrl.isProjectSelected(project)}">
-      <a href="[[ project.url ]]" class="logo" target="_blank" ng-if="project.image"><img src="[[ project.image ]]"></a>
-      <a href="[[ project.url ]]" class="name" target="_blank">[[ project.name ]]</a>
-      <a href="[[ project.url ]]" class="url" target="_blank">[[ project.url|trimurl ]]</a>
-      <div class="blurb">[[ project.blurb ]]</div>
-      <div class="tags">
-        <div class="tag" ng-repeat="tag in project.tags" ng-click="ctrl.toggleTag(tag)"  ng-class="{selected: ctrl.isTagSelected(tag), unselected: ctrl.anyTagsSelected()}">[[ tag ]]</div>
-      </div>
-    </div>
+  <div class="project-list" id="project-list">
   </div>
 </div>
 
 <script>
-var app = angular.module('projects', []);
-
-app.config(function($interpolateProvider) {
-    $interpolateProvider.startSymbol('[[');
-    $interpolateProvider.endSymbol(']]');
-});
-
-app.filter('trimurl', function() {
-  return function(x) {
-    return x.split('//')[1].split('/')[0];
-  }
-});
-
-app.value('ProjectData', [
+const projects = [
   {
     name: 'Buckets',
-    url: 'https://www.bucketsisbetter.com',
+    url: 'https://www.budgetwithbuckets.com',
     category: 'website',
     image: '../images/buckets.png',
-    tags: ['web', 'Electron', 'React', 'SQLite', 'NodeJS', 'OFX', 'Docker'],
+    tags: ['web', 'Electron', 'React', 'SQLite', 'NodeJS', 'OFX', 'Docker', 'TypeScript'],
     blurb: 'Buckets is a personal/family finance app with an emphasis on being more secure than other popular apps.',
   },
   {
@@ -49,15 +85,14 @@ app.value('ProjectData', [
     url: 'http://www.theproudpinkballoon.com',
     image: '../images/book/balloon.png',
     category: 'book',
-    tags: ['book', 'watercolor', 'story'],
+    tags: ['book', 'art', 'watercolor', 'story'],
     blurb: 'My first children\'s book.  The story of a balloon with an inflated ego.',
   },
   {
-    name: 'Conference Quotes',
-    url: 'https://www.iffycan.com/generalconference',
-    category: 'website',
-    tags: ['web', 'AngularJS', 'idea'],
-    blurb: "Easily get video clip of portions of General Conference."
+    name: 'Electronics for kids',
+    url: 'https://github.com/iffy/electronicsforkids',
+    blurb: "As my children show interest, I try to come up with ways to teach them about electronics.  This project contains what I've come up with.",
+    tags: ['PCB', 'Eagle', 'electronics', 'teaching'],
   },
   {
     name: 'SimpleFIN',
@@ -66,6 +101,13 @@ app.value('ProjectData', [
     image: 'http://simplefin.org/img/logo.svg',
     tags: ['web', 'AngularJS'],
     blurb: "SimpleFIN (SFIN) is a protocol definition that let's you give third party tools read-only access to bank transaction data.",
+  },
+  {
+    name: 'Conference Quotes',
+    url: 'https://www.iffycan.com/generalconference',
+    category: 'website',
+    tags: ['web', 'AngularJS', 'idea'],
+    blurb: "Easily get video clip of portions of General Conference."
   },
   {
     name: 'Just a Minute',
@@ -114,12 +156,6 @@ app.value('ProjectData', [
     blurb: 'Parsefin lets you easily parse OFX/OFC files into Python dicts.'
   },
   {
-    name: 'Twisted FTW!',
-    url: 'http://twistedftw.org',
-    tags: ['web', 'Python', 'Twisted', 'AngularJS'],
-    blurb: "Twisted FTW! (For the Win) is a growing documentation project meant to make Twisted more approachable and to showcase some of Twisted's great features.",
-  },
-  {
     name: 'ht',
     url: 'https://github.com/iffy/ht/tree/chrome-ext',
     tags: ['Chrome extension', 'AngularJS', 'idea'],
@@ -131,63 +167,98 @@ app.value('ProjectData', [
     tags: ['web', 'AngularJS', 'Python', 'Twisted', 'PostgreSQL', 'SQLite', 'Server-Sent Events', 'idea', 'demo'],
     blurb: "At my wife's request, here is a collaborative chalkboard with sticky notes.",
   }
-]);
+];
 
-app.factory('AllTags', function(ProjectData) {
-  var tags = [];
-  angular.forEach(ProjectData, function(item) {
-    angular.forEach(item.tags, function(tag) {
-      if (tags.indexOf(tag) === -1) {
-        tags.push(tag);
-      }
+let project_list = document.getElementById('project-list');
+
+function makeElement(tagtype, {content, classes, attrs}) {
+  let el = document.createElement(tagtype)
+  if (classes) {
+    classes.forEach(cls => {
+      el.classList.add(cls)
     });
+  }
+  if (content) {
+    el.innerHTML = content;
+  }
+  if (attrs) {
+    Object.keys(attrs).forEach(key => {
+      el.setAttribute(key, attrs[key]);
+    })
+  }
+  return el;
+}
+
+function trimurl(x) {
+  return x.split('//')[1];
+}
+
+function makeTag(name) {
+  let el = makeElement('div', {
+    classes: ['tag'],
+    content: name,
+  })
+  return el;
+}
+
+let tags = {};
+projects.forEach(project => {
+  project.tags.forEach(tag => {
+    tags[tag] = true;
+  })
+  let proj_el = makeElement('a', {
+    classes: ['project'],
+    attrs: {
+      target: '_blank',
+      href: project.url,
+    }
   });
-  return tags;
-});
 
-app.controller('MainCtrl', function(ProjectData, AllTags) {
-  var ctrl = this;
-  ctrl.projects = ProjectData;
-  ctrl.all_tags = AllTags;
-  ctrl.selected_tags = [];
+  // logo
+  let logo_spot = makeElement('div', {
+    classes: ['logo'],
+  })
+  proj_el.appendChild(logo_spot);
+  if (project.image) {
+    logo_spot.appendChild(makeElement('img', {
+      attrs: {
+        src: project.image,
+      }
+    }))
+  }
 
-  ctrl.toggleTag = function(tag) {
-    if (!ctrl.isTagSelected(tag)) {
-      ctrl.selected_tags.push(tag);
-    } else {
-      ctrl.selected_tags.splice(ctrl.selected_tags.indexOf(tag), 1);
+  let data_spot = makeElement('div', {
+    classes: ['data'],
+  })
+  proj_el.appendChild(data_spot);
+
+  // title
+  data_spot.appendChild(makeElement('div', {
+    content: project.name,
+    classes: ['title'],
+  }))
+  // url
+  data_spot.appendChild(makeElement('a', {
+    content: trimurl(project.url),
+    classes: ['url'],
+    attrs: {
+      href: project.url,
     }
+  }))
+
+  // blurb
+  if (project.blurb) {
+    data_spot.appendChild(makeElement('div', {
+      content: project.blurb,
+      classes: ['blurb'],
+    }))
   }
-  ctrl.isTagSelected = function(tag) {
-    return ctrl.selected_tags.indexOf(tag) !== -1;
-  }
-  ctrl.anyTagsSelected = function() {
-    return ctrl.selected_tags.length !== 0;
-  }
-  ctrl.isProjectSelected = function(project) {
-    if (!ctrl.anyTagsSelected()) {
-      return true;
-    }
-    for (var i = 0; i < project.tags.length; i++) {
-      if (ctrl.isTagSelected(project.tags[i])) {
-        return true;
-      }
-    }
-    return false;
-  }
-  ctrl.orderProjects = function(project) {
-    var idx = ProjectData.indexOf(project);
-    return idx;
-    if (ctrl.anyTagsSelected()) {
-      if (ctrl.isProjectSelected(project)) {
-        return [0, idx];
-      } else {
-        return [1, idx];
-      }
-    } else {
-      return [idx];  
-    }
-  }
-  return ctrl;
-});
+
+  // tags
+  project.tags.sort().forEach(tag => {
+    data_spot.appendChild(makeTag(tag));
+  })
+
+  project_list.appendChild(proj_el);
+})
 </script>
