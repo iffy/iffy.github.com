@@ -27,5 +27,5 @@ Ignore what I believe below, if you'd like, but consider that moment of death.
 
 ## As for me
 
-I believe that I will go on living.  And eventually I will get a body again (and upgraded model) and live with my family.  What I do while alive will decide what happens to me in the next life.
+I believe that I will go on living.  And eventually I will get a body again (an upgraded model) and live with my family.  What I do while alive will decide what happens to me in the next life.
 
