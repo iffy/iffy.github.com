@@ -10,4 +10,4 @@ FULLNAME="$(date +%Y-%m-%d)-${NAME}.md"
 
 cp _posts/_blank.md _posts/$FULLNAME
 
-subl _posts/$FULLNAME
+code _posts/$FULLNAME
