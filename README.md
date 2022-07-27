@@ -1,3 +1,7 @@
+To serve it locally:
+
+    ./run.sh
+
 https://help.github.com/articles/using-jekyll-with-pages/
 
     bundle exec jekyll serve -D
