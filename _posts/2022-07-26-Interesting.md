@@ -135,7 +135,7 @@ table.bordered td.mark {
 
 However, some books are very, *very* long. *War and Peace* is about half a million words and an image that was half a million by half a million pixels big would be bigger than my screen. So instead of counting each word, the computer divides the book up into sections. It compares each section and counts the number of matching words. The total count is then used to color a pixel some shade of grey where white means no common words, and black means all the words are the same.
 
-Also, I've made some other adjustements:
+Also, I've made some other adjustments:
 
 - Since each section of a book is the same as itself, I turn that middle diagonal line white so it's not distracting.
 - Words like "the" and "a" are removed because they are so common. In fact, I remove all words that make up more than 1% of the total.
