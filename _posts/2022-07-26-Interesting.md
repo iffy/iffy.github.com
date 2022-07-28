@@ -565,7 +565,7 @@ Remember how merciful the Lord has been throughout all time. Throughout your lif
 
 It was fun to recreate my brother's original image. Any other ideas for things you can make computers do to books?
 
-Here are a few more books:
+Here's the [code used to make these images](https://github.com/iffy/book-analysis/blob/master/charts.nim) and here are a few more books:
 
 ### Anna Karenina
 
