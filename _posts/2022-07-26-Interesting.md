@@ -3,7 +3,7 @@ layout: post
 title: Interesting Books
 # tags:
 # - art
-# image:
+image: /images/interestingbooks/img1.png
 ---
 
 Books are great! Not only can you read them, but you can make computers read them, too. Once upon a time, my brother made a computer read a book and shared this result:
