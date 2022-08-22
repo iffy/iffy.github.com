@@ -3,7 +3,7 @@ layout: post
 title: Making Car Rider Lines Faster
 # tags:
 # - art
-# image:
+image: /images/carrider/photo.jpg
 ---
 
 As I sit in the car rider line for our children’s school, I find myself capable of thinking only one thing: can’t we make this blasted line move any faster?!! I’ve considered all kinds of improvements to speed things along. But instead of relying on my own intuition, like any good nerd, I instead built an elaborate simulation engine to answer the question:
@@ -11,6 +11,10 @@ As I sit in the car rider line for our children’s school, I find myself capabl
 How do we make car rider lines better?
 
 I think the answer might surprise you.
+
+<div style="text-align: center;">
+<img src="/images/carrider/photo.jpg" alt="Picture of a car rider sign" style="width: 100%; border-radius: 4px;">
+</div>
 
 ## Introduction
 
@@ -20,7 +24,7 @@ If you haven’t experienced a school car rider line, thank your lucky stars. He
 
 Cars pull up to the school, wait, inch forward, wait, inch forward, wait, inch forward, drop off the children cooped up inside, then drive away. Simple.
 
-Here’s a more realistic car rider line:
+Here’s a more realistic car rider line (click on it, then press `P` to make it run):
 
 <iframe src="/images/carrider/carrider.html?arg=--noeditor&arg=--speed&arg=5&arg=--pause&arg=--map&arg=%7B%22d%22%3A%2210222220222022222222222222222020002020202000000000000002202200202020202220222022222220020020202220202020202000002002002020000020202020222222202202202202222022202000000220200200020200000000202222222020020222022222220220200000202202020000000002020022222220020202022222220202000000022022020202000002020202220002202002020200050222022202222220200202020004000000000000002022020202022322222222222222200202020202000000000000000220220202020222222222222222022020020202000000000000000202202202020222222222222222220220020202000000000000000000022022020222222222222222222202202002000000000000000000020220220222222222202222222202022002000000000020200000020202202202222202222022222202020220200200020200000000020202022022220002020222022202020202200000000202020202020202020222222222220222022202220222070000000000000000000000000000%22%2C%22x%22%3A%5B%5D%7D" width="512" height="512"></iframe>
 
@@ -32,7 +36,7 @@ Real quick, for these simulations, the red school building (in the middle) shows
 
 The number where cars exit (on the right) shows the average time cars spent waiting. Lower is better.
 
-Cars carry between 1 and 2 kids to school and drive/stop/wait at random rates.
+Cars carry 1 or 2 kids to school and drive/stop/wait at random rates.
 
 Pause/play with `P`. Also you can speed up the simulation by pressing `]`, or slow it down with `[`.
 
@@ -40,7 +44,7 @@ Okay, back to making car rider lines faster!
 
 ## Longer dropoff zone
 
-It’s silly to have only one car dropping kids off at a time, so let’s extend that dropoff zone to let more kids get to their educational duties at once.
+It’s silly to have only one car dropping kids off at a time, so let’s extend that dropoff zone to let more kids get to their educational duties at once. Here we have 3 dropoff zones.
 
 <iframe src="/images/carrider/carrider.html?arg=--height&arg=3&arg=--noeditor&arg=--speed&arg=5&arg=--map&arg=%7B%22d%22%3A%2200000000000005000000000000001222222222223332222222222227%22%2C%22x%22%3A%5B%5D%7D" width="100%" height="128"></iframe>
 
@@ -56,11 +60,11 @@ This doesn't work so well.
 
 ## Sequential vs Parallel
 
-Instead of having only one long dropoff zone, then how about making more parallel zones?
+Instead of having only one long dropoff zone, then how about making *parallel* zones?
 
 <iframe src="/images/carrider/carrider.html?arg=--height&arg=7&arg=--noeditor&arg=--speed&arg=5&arg=--map&arg=%7B%22d%22%3A%2212222222000000000000000000000000000200022222223332220000122222220002000000454002000000000002222222222233322222271222222200020000004440020000000000020002222222333222000012222222%22%2C%22x%22%3A%5B%5D%7D" width="100%" height="128"></iframe>
 
-Great! If grouping dropoffs makes it better, and having parallel dropoffs makes improves it more, then here is the optimal car rider dropoff plan!
+Great! If grouping dropoffs makes it better, and having parallel dropoffs improves it more, then this must be the optimal car rider dropoff plan!
 
 (Click on it and press `P` to watch it go)
 
@@ -70,7 +74,7 @@ Bam! This works way better than the sequential line, but at the cost of a LOT mo
 
 I should mention at this point that kids in the simulation start out walking fast, but quickly get tired and slow down.
 
-The kids crossing in front of the cars really delays the cars.
+The kids crossing in front of the cars really delays the cars in the center paths.
 
 ## Multiple, farther away dropoff spots
 
@@ -90,13 +94,13 @@ Here's the same scenario from above, but with shuttles driving the kids from the
 
 <iframe src="/images/carrider/carrider.html?arg=--noeditor&arg=--speed&arg=5&arg=--pause&arg=--map&arg=%7B%22d%22%3A%2212220001000070700001000000000003400200002020000200002221000340020000202000020004300000034002333320233332000430000003444444440004444000043000722206222262202262222264300000000200000020200000002022270000020000002020000000200000000002000000202000000020222112220200000020200000002430000003462222226020000000643000000300000000402000000024300000030000000050200000002430000003022222644460000000202227722202000200402222222260000000000200020262000000004000001222020002020200222220400000000346222202022030002044222700034000000200603000200030000003400000460024300020003000000340022242002030002000300000020002034200202220200030007222000203420020002020002221000000020342002000202000000000000002034262200020200000000000000202004444002020000000000000020202333320202000000000000001070100007010700000000000000000000000000000000000%22%2C%22x%22%3A%5B%5D%7D" width="512" height="512"></iframe>
 
-That works *really, *really* well.
+That works really, *really* well.
 
 ## I am the problem
 
 I'll admit, after many mornings and afternoons of contemplating this problem, I laughed out loud when I realized that busses are the solution.
 
-Well, busses are the *technical* solution. That people don't use the technical solution means that it's really a people/psychological/behavioral problem.
+Well, busses are the *technical* solution. That people don't use the technical solution means that it's really a people/psychological/behavioral problem: too many people use the car rider line instead of a superior alternative.
 
 Astute readers will notice that I've done all this work because I, myself, am stuck in the car rider line. Astute and judgmental readers will call me a hypocrite for complaining about being in line while advocating using the bus. Sadly, there is no bus stop near us. When we had one nearby, we used it and loved it. I'm sure there are others in my shoes.
 
