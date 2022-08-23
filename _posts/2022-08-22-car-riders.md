@@ -16,6 +16,12 @@ I think the answer might surprise you.
 <img src="/images/carrider/photo.jpg" alt="Picture of a car rider sign" style="width: 100%; border-radius: 4px;">
 </div>
 
+<style>
+iframe {
+  margin-bottom: 2rem;
+}
+</style>
+
 ## Introduction
 
 If you haven’t experienced a school car rider line, thank your lucky stars. Here is the simplest (and worst) possible car rider line:
@@ -24,7 +30,7 @@ If you haven’t experienced a school car rider line, thank your lucky stars. He
 
 Cars pull up to the school, wait, inch forward, wait, inch forward, wait, inch forward, drop off the children cooped up inside, then drive away. Simple.
 
-Here’s a more realistic car rider line (click on it, then press `P` to make it run):
+Here’s a more realistic car rider line (click on it to make it run):
 
 <iframe src="/images/carrider/carrider.html?arg=--noeditor&arg=--speed&arg=5&arg=--pause&arg=--map&arg=%7B%22d%22%3A%2210222220222022222222222222222020002020202000000000000002202200202020202220222022222220020020202220202020202000002002002020000020202020222222202202202202222022202000000220200200020200000000202222222020020222022222220220200000202202020000000002020022222220020202022222220202000000022022020202000002020202220002202002020200050222022202222220200202020004000000000000002022020202022322222222222222200202020202000000000000000220220202020222222222222222022020020202000000000000000202202202020222222222222222220220020202000000000000000000022022020222222222222222222202202002000000000000000000020220220222222222202222222202022002000000000020200000020202202202222202222022222202020220200200020200000000020202022022220002020222022202020202200000000202020202020202020222222222220222022202220222070000000000000000000000000000%22%2C%22x%22%3A%5B%5D%7D" width="512" height="512"></iframe>
 
@@ -38,7 +44,7 @@ The number where cars exit (on the right) shows the average time cars spent wait
 
 Cars carry 1 or 2 kids to school and drive/stop/wait at random rates.
 
-Pause/play with `P`. Also you can speed up the simulation by pressing `]`, or slow it down with `[`.
+Pause/play with `P` or clicking. Also you can speed up the simulation by pressing `]`, or slow it down with `[`.
 
 Okay, back to making car rider lines faster!
 
@@ -64,9 +70,11 @@ Instead of having only one long dropoff zone, then how about making *parallel* z
 
 <iframe src="/images/carrider/carrider.html?arg=--height&arg=7&arg=--noeditor&arg=--speed&arg=5&arg=--map&arg=%7B%22d%22%3A%2212222222000000000000000000000000000200022222223332220000122222220002000000454002000000000002222222222233322222271222222200020000004440020000000000020002222222333222000012222222%22%2C%22x%22%3A%5B%5D%7D" width="100%" height="128"></iframe>
 
-Great! If grouping dropoffs makes it better, and having parallel dropoffs improves it more, then this must be the optimal car rider dropoff plan!
+Great!
 
-(Click on it and press `P` to watch it go)
+If grouping dropoffs makes it better, and having parallel dropoffs improves it more, then this next one must be the optimal car rider dropoff plan!
+
+(Click on it to watch it go)
 
 <iframe src="/images/carrider/carrider.html?arg=--noeditor&arg=--speed&arg=5&arg=--pause&arg=--map&arg=%7B%22d%22%3A%22122222233333333333333333322700000004444444444444444440000000000000000400000000000000122222233333333333333333322700000004444444444444444440000000000000000400000000000000122222233333333333333333322700000004444444444444444440000000000000000400000000000000000000000000050000000000000000000004444444444444444440001222222333333333333333333227000000000000040000000000000000000004444444444444444440001222222333333333333333333227000000000000040000000000000000000004444444444444444440001222222333333333333333333227000000000000040000000000000000000004444444444444444440001222222333333333333333333227000000000000040000000000000000000004444444444444444440001222222333333333333333333227000000000000040000000000000000000004444444444444444440001222222333333333333333333227%22%2C%22x%22%3A%5B%5D%7D" width="512" height="512"></iframe>
 
@@ -102,7 +110,7 @@ I'll admit, after many mornings and afternoons of contemplating this problem, I 
 
 Well, busses are the *technical* solution. That people don't use the technical solution means that it's really a people/psychological/behavioral problem: too many people use the car rider line instead of a superior alternative.
 
-Astute readers will notice that I've done all this work because I, myself, am stuck in the car rider line. Astute and judgmental readers will call me a hypocrite for complaining about being in line while advocating using the bus. Sadly, there is no bus stop near us. When we had one nearby, we used it and loved it. I'm sure there are others in my shoes.
+Astute readers will notice that I've done all this work because I, myself, am stuck in the car rider line. Astute and judgmental readers will correctly call me a hypocrite for complaining about being in line while advocating using the bus. Sadly, there is no bus stop near us. When we had one nearby, we used it and loved it. I'm sure there are others in my shoes.
 
 But not 90% of people in the line, surely!
 
@@ -135,7 +143,7 @@ Here, then is the optimal car rider line.
 
 ## Play time
 
-If you want to play around with the simulator, this one has the editor enabled.
+If you want to play around with the simulator, this one (which happens to look like my kid's school's actual car rider line) has the editor enabled.
 
 - `E` go to edit mode
 - `Escape` quit edit mode
@@ -145,6 +153,6 @@ If you want to play around with the simulator, this one has the editor enabled.
 - Make crosswalks by putting down a road then putting sidewalk over it
 - There are all kinds of bugs
 
-<iframe src="/images/carrider/carrider.html?arg=--pause" width="512" height="512"></iframe>
+<iframe src="/images/carrider/carrider.html?arg=--pause&arg=--map&arg=%7B%22d%22%3A%22001000000000000000001000700000200000000000000000233320001222100000000000000004440000002000000000000000002262220000207000000000000000200002000020200000000000000020000200002020000000000000002000020000202022222222222220200002070020202000000000002020000202002020200000000000202000024300202220233333333320200002430020000024444444442020000643002022222333333333202000020200202000044444444444600002010020200000000400000020000200002020000000040000002222220000202000000005000000000000000020200000000000000000000000002022222222222222222222220000200000000000000000000002000020000000000000000000000200002000000000000000000000020000200000000000000000000002000020000000000000000000000200002000000000000000000000020000222222222222222222222222%22%2C%22x%22%3A%5B%5D%7D" width="512" height="512"></iframe>
 
 But seriously, administrators, spend money on the busses, not "improving" the car rider lines.
