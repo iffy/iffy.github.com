@@ -92,7 +92,7 @@ permalink: /words/
 }
 </style>
 
-{% assign sorted_words = (site.data.words | sort: 'word') %}
+{% assign sorted_words = site.data.words | sort: 'word' %}
 
 <p>
   Here are {{ sorted_words|size }} words I either like, don't/didn't know, couldn't define or couldn't form into a novel sentence.  I often find these while reading good books, write them down on my bookmark, then put them here.

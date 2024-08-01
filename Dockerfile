@@ -1,5 +1,5 @@
 # From https://github.com/github/pages-gem/blob/master/Dockerfile.alpine
-FROM ruby:2.7.3-alpine
+FROM ruby:3.3-alpine
 
 RUN apk update && apk add --no-cache \
   git
