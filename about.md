@@ -10,8 +10,7 @@ menu: main
 
 ## Professionally, ##
 
-I have a B.S. in Electrical Engineering from Brigham Young University.  Currently I work as a Penetration Tester at SecurityMetrics, Inc. in Orem, Utah.  And for the last decade, I worked here as a programmer (Python, PostgreSQL, Twisted, TCL, Docker, AngularJS, etc...)
-
+I have a B.S. in Electrical Engineering from Brigham Young University.  Currently I work as a Software Developer in the great state of Georgia.
 
 ## Personally, ##
 
